@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="1" master_id="0" name="SMB" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1723073477" ts_lastsave="1723074320">
+    <rich_text>On Windows mostly running on Port 445 only 
+On Linux it runs over 139 over TCP /  IP
+
+Enumeration with null (anonymous sessions) 
+</rich_text>
+    <rich_text family="monospace">smbclient -N -L //10.129.14.128</rich_text>
+    <rich_text>
+
+or with smbMap:
+</rich_text>
+    <rich_text family="monospace">smbmap -H 10.129.14.128</rich_text>
+    <rich_text>
+with -r can recursively browse 
+</rich_text>
+    <rich_text family="monospace">smbmap -H 10.129.14.128 -r notes</rich_text>
+    <rich_text>
+
+Downloading/Uploading:
+</rich_text>
+    <rich_text family="monospace">smbmap -H 10.129.14.128 --download "notes\note.txt"</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text family="monospace">smbmap -H 10.129.14.128 -upload "notes\note.txt"</rich_text>
+    <rich_text>
+
+Very usefull for enumeration is rpcclient with null session:
+
+</rich_text>
+    <rich_text family="monospace">rpcclient -U'%' 10.10.110.17</rich_text>
+    <rich_text>
+	</rich_text>
+    <rich_text family="monospace">rpcclient $&gt; enumdomusers</rich_text>
+    <rich_text>
+
+all commands: </rich_text>
+    <rich_text link="webs https://www.willhackforsushi.com/sec504/SMB-Access-from-Linux.pdf">https://www.willhackforsushi.com/sec504/SMB-Access-from-Linux.pdf</rich_text>
+    <rich_text>
+
+Also very powerful tool:
+</rich_text>
+    <rich_text family="monospace">./enum4linux-ng.py 10.10.11.45 -A -C</rich_text>
+    <rich_text>
+
+github: </rich_text>
+    <rich_text link="webs https://github.com/cddmp/enum4linux-ng">https://github.com/cddmp/enum4linux-ng</rich_text>
+    <rich_text>
+
+Sometimes password spraying is better than brute forcing single user:
+</rich_text>
+    <rich_text family="monospace">crackmapexec smb 10.10.110.17 -u /tmp/userlist.txt -p 'Company01!' --local-auth
+</rich_text>
+  </node>
+</cherrytree>

