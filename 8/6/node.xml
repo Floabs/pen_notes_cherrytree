@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="6" master_id="0" name="Information Gathering" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1746967254" ts_lastsave="1747072955">
+    <rich_text>Server&#13;
+	- Typ (Virtual Server / Standalone)
+	- Serversoftware und Versionen&#13;
+ 	- Technologien (ASP.net, Java, PHP,...)&#13;
+ 	- Konfiguration der Serversoftware&#13;
+ 		z.B.: PUT bei Webservern
+
+Bekannte Anwendung&#13;
+	Feststellen der Anwendungsversion&#13;
+	Bekannte Schwachstellen&#13;
+	Open Source: Sourcecode als Hilfestellung&#13;
+		Tools: z.B.: Nikto, ...&#13;
+Eigenentwicklung
+Erfassen der Anwendungsfunktionalität und der Angriffsvektoren
+
+1- Initialen Überblick Verschaffen
+         nikto -h </rich_text>
+    <rich_text link="webs http://10.10.10.10">http://10.10.10.10</rich_text>
+    <rich_text>
+
+2. Danach subdomains abfragen
+		cd /usr/lib/python3/dist-packages/dirsearch/
+		python3 dirsearch.py -u </rich_text>
+    <rich_text link="webs http://localhost:3000">http://localhost:3000</rich_text>
+    <rich_text>
+		
+
+		
+
+
+
+&#13;
+		</rich_text>
+  </node>
+</cherrytree>

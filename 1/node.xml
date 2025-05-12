@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="1" master_id="0" name="SMB" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1723073477" ts_lastsave="1723299058">
+  <node unique_id="1" master_id="0" name="SMB" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1723073477" ts_lastsave="1746977803">
     <rich_text>On Windows mostly running on Port 445 only 
 On Linux it runs over 139 over TCP /  IP
 
@@ -51,6 +51,7 @@ github: </rich_text>
 Sometimes password spraying is better than brute forcing single user:
 </rich_text>
     <rich_text family="monospace">crackmapexec smb 10.10.110.17 -u /tmp/userlist.txt -p 'Company01!' --local-auth
+
 </rich_text>
   </node>
 </cherrytree>
