@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="18" master_id="0" name="Insecure Direct Object References (IDOR" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747165468" ts_lastsave="1747165528">
+    <rich_text>Mostly Purp / Scripting..
+
+Look for code and Frontend js functions. direkt parameters with ?=
+
+Don't forget u can combine them and also use in combination with Request Forgery.
+
+</rich_text>
+  </node>
+</cherrytree>

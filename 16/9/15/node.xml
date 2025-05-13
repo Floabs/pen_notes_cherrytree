@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="15" master_id="0" name="pevention" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747136121" ts_lastsave="1747136782">
+    <rich_text>Input Sanitization
+
+Frontend:
+
+f.e.
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+User input never inside the following:
+JavaScript code &lt;script&gt;&lt;/script&gt;&#13;
+CSS Style Code &lt;style&gt;&lt;/style&gt;&#13;
+Tag/Attribute Fields &lt;div name='INPUT'&gt;&lt;/div&gt;&#13;
+HTML Comments &lt;!-- --&gt;
+DOM.innerHTML&#13;
+DOM.outerHTML&#13;
+document.write()&#13;
+document.writeln()&#13;
+document.domain()
+html()&#13;
+parseHTML()&#13;
+add()&#13;
+append()&#13;
+prepend()&#13;
+after()&#13;
+insertAfter()&#13;
+before()&#13;
+insertBefore()&#13;
+replaceAll()&#13;
+replaceWith()
+
+Backend:
+
+f.e. email:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+Strong Backend libaries to prevent xss with php backend:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+For Nodejs backend:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+
+PHP- html encoding:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+Nodejs-html encoding:
+
+
+
+
+</rich_text>
+    <codebox char_offset="36" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;script type="text/javascript" src="dist/purify.min.js"&gt;&lt;/script&gt;&#13;
+let clean = DOMPurify.sanitize( dirty );</codebox>
+    <codebox char_offset="451" justification="left" frame_width="977" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">if (filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) {&#13;
+    // do task&#13;
+} else {&#13;
+    // reject input - do not display it&#13;
+}</codebox>
+    <codebox char_offset="511" justification="left" frame_width="500" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">addslashes($_GET['email'])</codebox>
+    <codebox char_offset="533" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">import DOMPurify from 'dompurify';&#13;
+var clean = DOMPurify.sanitize(dirty);</codebox>
+    <codebox char_offset="557" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">htmlentities($_GET['email']);</codebox>
+    <codebox char_offset="581" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">import encode from 'html-entities';&#13;
+encode('&lt;'); // -&gt; '&amp;lt;'</codebox>
+  </node>
+</cherrytree>

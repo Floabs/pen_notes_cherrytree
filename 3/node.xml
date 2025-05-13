@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="3" master_id="0" name="MSQL / MYSQL" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1723299058" ts_lastsave="1746967254">
+  <node unique_id="3" master_id="0" name="MSQL / MYSQL" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1723299058" ts_lastsave="1747140077">
     <rich_text>Usually run on port 
 	 1433 MSSQL (Windows) or 2433 for “hidden”
 	3306or MySql
@@ -10,7 +10,7 @@ Authentification Methods:
 	2. using username / pw provivided in the SQL database.
 
 Windows auth:	
-	</rich_text>
+</rich_text>
     <rich_text family="monospace">sqsh -S 10.129.203.7 -U .\\julio -P 'MyPassword!' -h</rich_text>
     <rich_text>
 

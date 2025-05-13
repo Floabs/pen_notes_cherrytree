@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="13" master_id="0" name="Tools" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747092050" ts_lastsave="1747132479">
+    <rich_text>XSS - Strike&#13;
+	</rich_text>
+    <rich_text link="webs https://github.com/s0md3v/XSStrike.git">https://github.com/s0md3v/XSStrike.git</rich_text>
+    <rich_text>&#13;
+pip install -r requirements.txt&#13;
+python3 xsstrike.py -u "</rich_text>
+    <rich_text link="webs http://SERVER_IP:PORT/index.php?parameter=test">http://SERVER_IP:PORT/index.php?parameter=test</rich_text>
+    <rich_text>" &#13;
+	
+
+
+
+</rich_text>
+    <rich_text link="webs https://github.com/epsylon/xsser.git">https://github.com/epsylon/xsser.git</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text link="webs https://github.com/rajeshmajumdar/BruteXSS.git">https://github.com/rajeshmajumdar/BruteXSS.git</rich_text>
+  </node>
+</cherrytree>
