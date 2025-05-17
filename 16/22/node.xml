@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="22" master_id="0" name="SQL -  Injection / Databases" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747381422" ts_lastsave="1747502244">
+    <rich_text>Types:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+
+Inband:
+Output direkt am Frontend wieder
+
+Blind:
+We dont get output “printed” but to test if it gets processed we can verify with boolean to see if its same or not
+or Sleep() and wtch if delay.
+
+Out-of-band:
+Transferring the output f.e. to a DNS server and getting Data from there.</rich_text>
+    <encoded_png char_offset="7" justification="left" link="" sha256sum="0461a4505b16d4421a5a8fc105203887f66f415e4bf6f18bc5d57d75608aff1c"/>
+  </node>
+</cherrytree>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="23" master_id="0" name="General SQL" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747381429" ts_lastsave="1747392036">
+    <rich_text>Connect to a DB
+
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+&#13;
+
+&#13;
+&#13;
+
+&#13;
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>&#13;
+
+Dont forget AND, OR, NOT
+
+</rich_text>
+    <codebox char_offset="16" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">mysql -u root -h docker.hackthebox.eu -P 3306 -p </codebox>
+    <codebox char_offset="19" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">CREATE TABLE logins (&#13;
+    id INT NOT NULL AUTO_INCREMENT,&#13;
+    username VARCHAR(100) UNIQUE NOT NULL,&#13;
+    password VARCHAR(100) NOT NULL,&#13;
+    date_of_joining DATETIME DEFAULT NOW(),&#13;
+    PRIMARY KEY (id)&#13;
+    );</codebox>
+    <table char_offset="22" justification="left" col_min="400" col_max="400" col_widths="0,0">
+      <row>
+        <cell>CREATE TABLE logins (id INT, ...)	</cell>
+        <cell>Add a new table</cell>
+      </row>
+      <row>
+        <cell>SHOW TABLES</cell>
+        <cell>List available tables in current database</cell>
+      </row>
+      <row>
+        <cell>DESCRIBE logins</cell>
+        <cell>Show table properties and columns</cell>
+      </row>
+      <row>
+        <cell>INSERT INTO table_name VALUES (value_1,..)</cell>
+        <cell>Add values to table</cell>
+      </row>
+      <row>
+        <cell>NSERT INTO table_name(column2, ...) VALUES (column2_value, ..)</cell>
+        <cell>Add values to specific columns in a table</cell>
+      </row>
+      <row>
+        <cell>UPDATE table_name SET column1=newvalue1, ... WHERE &lt;condition&gt;</cell>
+        <cell>Update table values</cell>
+      </row>
+      <row>
+        <cell>Tables</cell>
+        <cell></cell>
+      </row>
+    </table>
+    <table char_offset="28" justification="left" col_min="400" col_max="400" col_widths="0,0">
+      <row>
+        <cell>SELECT * FROM table_name</cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>SELECT column1, column2 FROM table_name</cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>DROP TABLE logins</cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>ALTER TABLE logins ADD newColumn INT	</cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>ALTER TABLE logins RENAME COLUMN newColumn TO oldColumn</cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>ALTER TABLE logins MODIFY oldColumn DATE</cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>ALTER TABLE logins DROP oldColumn</cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Columns</cell>
+        <cell></cell>
+      </row>
+    </table>
+    <table char_offset="35" justification="left" col_min="400" col_max="400" col_widths="0,0">
+      <row>
+        <cell>SELECT * FROM logins ORDER BY column_1</cell>
+        <cell>Sort by column</cell>
+      </row>
+      <row>
+        <cell>SELECT * FROM logins ORDER BY column_1 DESC</cell>
+        <cell>Sort by column in descending order</cell>
+      </row>
+      <row>
+        <cell>SELECT * FROM logins ORDER BY column_1 DESC, id ASC</cell>
+        <cell>Sort by two-columns</cell>
+      </row>
+      <row>
+        <cell>SELECT * FROM logins LIMIT 2</cell>
+        <cell>Only show first two results</cell>
+      </row>
+      <row>
+        <cell>SELECT * FROM logins LIMIT 1</cell>
+        <cell>Only show first two results starting from index 2</cell>
+      </row>
+      <row>
+        <cell>SELECT * FROM table_name WHERE &lt;condition&gt;</cell>
+        <cell>List results that meet a condition</cell>
+      </row>
+      <row>
+        <cell>SELECT * FROM logins WHERE username LIKE 'admin%'</cell>
+        <cell>List results where the name is similar to a given string</cell>
+      </row>
+      <row>
+        <cell>For LIKE: 
+% = wildcard - anything 0 or more
+“_” = any but exactly one time f.e. “___” = tom</cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Output</cell>
+        <cell></cell>
+      </row>
+    </table>
+  </node>
+</cherrytree>

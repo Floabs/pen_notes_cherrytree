@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="24" master_id="0" name="sql in php" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747391490" ts_lastsave="1747391991">
+    <rich_text>Db Abfragen in PHP:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+Print result:
+
+Classic “search function”:
+
+
+User Input:
+
+
+
+
+</rich_text>
+    <codebox char_offset="20" justification="left" frame_width="567" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$conn = new mysqli("localhost", "root", "password", "users");&#13;
+$query = "select * from logins";&#13;
+$result = $conn-&gt;query($query);</codebox>
+    <codebox char_offset="36" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">while($row = $result-&gt;fetch_assoc() ){&#13;
+	echo $row["name"]."&lt;br&gt;";&#13;
+}</codebox>
+    <codebox char_offset="65" justification="left" frame_width="630" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$searchInput =  $_POST['findUser'];&#13;
+$query = "select * from logins where username like '%$searchInput'";&#13;
+$result = $conn-&gt;query($query);</codebox>
+    <codebox char_offset="80" justification="left" frame_width="630" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$searchInput =  $_POST['findUser'];&#13;
+$query = "select * from logins where username like '%$searchInput'";&#13;
+$result = $conn-&gt;query($query);</codebox>
+    <codebox char_offset="83" justification="left" frame_width="603" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
+  </node>
+</cherrytree>

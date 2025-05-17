@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="12" master_id="0" name="Defacing" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747092033" ts_lastsave="1747093033">
-    <rich_text>document.getElementById("todo").innerHTML = "New Text"&#13;
+  <node unique_id="12" master_id="0" name="Defacing" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747092033" ts_lastsave="1747332976">
+    <rich_text>&#13;
 &#13;
 Changing more than just one element with jquery:&#13;
-$("#todo").html('New Text');&#13;
+&#13;
 &#13;
 &#13;
 Changing the entire html body to empty:&#13;
 document.getElementsByTagName('body')[0].innerHTML = "New Text"&#13;
 &#13;
 Preparing AND TESTING locally also the code we wanna have for after wiping. f.e:&#13;
-&lt;center&gt;&#13;
-    &lt;h1 style="color: white"&gt;Cyber Security Training&lt;/h1&gt;&#13;
-    &lt;p style="color: white"&gt;by &#13;
-        &lt;img src="</rich_text>
-    <rich_text link="webs https://academy.hackthebox.com/images/logo-htb.svg">https://academy.hackthebox.com/images/logo-htb.svg</rich_text>
-    <rich_text>" height="25px" alt="HTB Academy"&gt;&#13;
-    &lt;/p&gt;&#13;
-&lt;/center&gt;&#13;
+&#13;
 &#13;
 Then all in one scripts:&#13;
-&lt;script&gt;document.getElementsByTagName('body')[0].innerHTML = '&lt;center&gt;&lt;h1 style="color: white"&gt;Cyber Security Training&lt;/h1&gt;&lt;p style="color: white"&gt;by &lt;img src="</rich_text>
-    <rich_text link="webs https://academy.hackthebox.com/images/logo-htb.svg">https://academy.hackthebox.com/images/logo-htb.svg</rich_text>
-    <rich_text>" height="25px" alt="HTB Academy"&gt; &lt;/p&gt;&lt;/center&gt;'&lt;/script&gt;&#13;
+&#13;
 &#13;</rich_text>
+    <codebox char_offset="0" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">document.getElementById("todo").innerHTML = "New Text"</codebox>
+    <codebox char_offset="55" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$("#todo").html('New Text');</codebox>
+    <codebox char_offset="252" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;center&gt;&#13;
+    &lt;h1 style="color: white"&gt;Cyber Security Training&lt;/h1&gt;&#13;
+    &lt;p style="color: white"&gt;by &#13;
+        &lt;img src="https://academy.hackthebox.com/images/logo-htb.svg" height="25px" alt="HTB Academy"&gt;&#13;
+    &lt;/p&gt;&#13;
+&lt;/center&gt;</codebox>
+    <codebox char_offset="283" justification="left" frame_width="2430" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;script&gt;document.getElementsByTagName('body')[0].innerHTML = '&lt;center&gt;&lt;h1 style="color: white"&gt;Cyber Security Training&lt;/h1&gt;&lt;p style="color: white"&gt;by &lt;img src="https://academy.hackthebox.com/images/logo-htb.svg" height="25px" alt="HTB Academy"&gt; &lt;/p&gt;&lt;/center&gt;'&lt;/script&gt;</codebox>
   </node>
 </cherrytree>

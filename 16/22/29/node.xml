@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="29" master_id="0" name="prevention" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747430307" ts_lastsave="1747430322">
+    <rich_text>
+
+</rich_text>
+    <rich_text link="webs https://www.php.net/manual/en/mysqli-stmt.bind-param.php">https://www.php.net/manual/en/mysqli-stmt.bind-param.php</rich_text>
+    <codebox char_offset="0" justification="left" frame_width="983" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">&lt;SNIP&gt;&#13;
+  $username = $_POST['username'];&#13;
+  $password = $_POST['password'];&#13;
+&#13;
+  $query = "SELECT * FROM logins WHERE username=? AND password = ?" ;&#13;
+  $stmt = mysqli_prepare($conn, $query);&#13;
+  mysqli_stmt_bind_param($stmt, 'ss', $username, $password);&#13;
+  mysqli_stmt_execute($stmt);&#13;
+  $result = mysqli_stmt_get_result($stmt);&#13;
+&#13;
+  $row = mysqli_fetch_array($result);&#13;
+  mysqli_stmt_close($stmt);&#13;
+&lt;SNIP&gt;</codebox>
+  </node>
+</cherrytree>

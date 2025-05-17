@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="17" master_id="0" name="Request Forgery (Web Tampering)" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747144420" ts_lastsave="1747147681">
+  <node unique_id="17" master_id="0" name="Request Forgery (Web Tampering)" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747144420" ts_lastsave="1747379085">
     <rich_text>Show allowed Options:
 curl -i -X OPTIONS </rich_text>
     <rich_text link="webs http://SERVER_IP:PORT/">http://SERVER_IP:PORT/</rich_text>
     <rich_text>
 
 Often certain restrictions only for certain methods but other methods still allowed.
+POST
+PUT
+HEAD 
+GET
+OPTIONS
+DELETE
+
 
 testing f.e. with creating a file named: 
-
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
 to see if we create 2 at once
 
 ALWAYS CHANGE WITH RIGHTCLICK in Burp!!! to also change req. parameters	</rich_text>
-    <codebox char_offset="193" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">file1; touch file2; </codebox>
+    <codebox char_offset="228" justification="left" frame_width="977" frame_height="50" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">file1; touch file2; </codebox>
   </node>
 </cherrytree>

