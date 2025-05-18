@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="44" master_id="0" name="samesite cookies" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747589633" ts_lastsave="1747598130">
+    <rich_text>Difference Same Site vs Same origin:
+
+
+Same Site Cookie restriction levels:&#13;
+	- Strict
+			Only when its exactly from the same site -&gt; otherwise it wont be sent&#13;
+	- Lax
+			Only in GET method and CLICK
+			NOT in POST (usually to modify data) aswell as iframes, scripts references to images etc&#13;
+	- None
+			Basically disables Same Site Cookie restrictions
+			
+Default goes to Lax -&gt; some but not all.
+
+Can be set manually:
+- Set-Cookie: session=0F8tgdOhi9ynR1M9wa3ODa; SameSite=Strict
+- 
+If you set it none you need also set Secure (https only) or it will be ignored
+- Set-Cookie: trackingId=0F8tgdOhi9ynR1M9wa3ODa; SameSite=None; Secure</rich_text>
+    <encoded_png char_offset="37" justification="left" link="" sha256sum="f508ef81040333dec938df6e32b398ca76c6537f3ece0013b30e24b0c168d7bc"/>
+  </node>
+</cherrytree>

