@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="33" master_id="0" name="CORS: Subdomains" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747503024" ts_lastsave="1747503177">
-    <rich_text>Often ppl config sites with whitelisting from their domain prefix.
+  <node unique_id="33" master_id="0" name="CORS: Subdomains" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747503024" ts_lastsave="1747531031">
+    <rich_text>check also tls break for this general:
+
+1. if you find a subdomain thats vuln. to f.e. XSS u can inject your script there and then use cors
+
+2. Breaking TLS using a subdomain of the hp that allows http:
+		GET /api/requestApiKey HTTP/1.1&#13;
+		Host: vulnerable-website.com&#13;
+		Origin: </rich_text>
+    <rich_text link="webs http://trusted-subdomain.vulnerable-website.com">http://trusted-subdomain.vulnerable-website.com</rich_text>
+    <rich_text>
+		Cookie: sessionid=..
+	The application responds with:&#13;
+		HTTP/1.1 200 OK&#13;
+		Access-Control-Allow-Origin: </rich_text>
+    <rich_text link="webs http://trusted-subdomain.vulnerable-website.com">http://trusted-subdomain.vulnerable-website.com</rich_text>
+    <rich_text>&#13;
+		Access-Control-Allow-Credentials: true
+		
+3. Often ppl config sites with whitelisting from their domain prefix.
 
 For example, suppose an application grants access to all domains ending in:&#13;
 	normal-website.com&#13;

