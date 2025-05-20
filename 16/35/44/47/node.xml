@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="47" master_id="0" name="2min_rule" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747659774" ts_lastsave="1747659934">
+    <rich_text>On new cookies browser waits for 2min to apply the LAX settings to not fk with SSO or sth else.
+
+→ if you get the browser to create a new cookie and immedetely send it u win
+
+Problem: -&gt; user would need to log in again 
+Solution -&gt; do it in different window
+Problem -&gt; browser blocks popup by default unless user initialized.
+Solution -&gt;  wrap window.open("vuln side"); into window.onclick = () {}
+
+</rich_text>
+    <codebox char_offset="399" justification="left" frame_width="1971" frame_height="100" width_in_pixels="1" syntax_highlighting="js" highlight_brackets="1" show_line_numbers="0">window.onclick = () =&gt; {&#13;
+    window.open('https://vulnerable-website.com/login/sso');&#13;
+}</codebox>
+  </node>
+</cherrytree>

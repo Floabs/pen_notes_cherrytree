@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="44" master_id="0" name="samesite cookies" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747589633" ts_lastsave="1747598130">
+  <node unique_id="44" master_id="0" name="samesite cookies" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747589633" ts_lastsave="1747659774">
     <rich_text>Difference Same Site vs Same origin:
-
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
 
 Same Site Cookie restriction levels:&#13;
 	- Strict
