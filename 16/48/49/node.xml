@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="49" master_id="0" name="dirfuzzing" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747680540" ts_lastsave="1747681937">
+  <node unique_id="49" master_id="0" name="dirfuzzing" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747680540" ts_lastsave="1747763911">
     <rich_text>Looking for pages within a directory:
 
 First it helps to know which exentsions should be used.
 	
 	So we fuzz for common used extensions:
 			like .html, .aspx, .php using FUZZ in the extension 
-
-
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
 
 Now that we know which extension we are looking for we can specify our page search even more:
 for example for php only:
 
 </rich_text>
-    <codebox char_offset="194" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ffuf -w /opt/useful/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://SERVER_IP:PORT/blog/indexFUZZ</codebox>
-    <codebox char_offset="318" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ffuf -w /opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://SERVER_IP:PORT/blog/FUZZ.php&#13;</codebox>
+    <rich_text justification="left"></rich_text>
+    <codebox char_offset="193" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ffuf -w /opt/useful/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://SERVER_IP:PORT/blog/indexFUZZ</codebox>
+    <codebox char_offset="317" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ffuf -w /opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://SERVER_IP:PORT/blog/FUZZ.php&#13;</codebox>
   </node>
 </cherrytree>

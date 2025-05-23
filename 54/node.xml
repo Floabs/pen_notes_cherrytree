@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="54" master_id="0" name="Password Attack" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747810880" ts_lastsave="1747815185">
+    <rich_text>Aufbau im /etc/shadow
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>&#13;
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+</rich_text>
+    <table char_offset="23" justification="left" col_min="400" col_max="400" col_widths="0,0,0">
+      <row>
+        <cell>$ j9T</cell>
+        <cell>	$ j9T</cell>
+        <cell>$ 3QSBB6CbHEu.SNIP...8Ms</cell>
+      </row>
+      <row>
+        <cell>$ &lt;id&gt;</cell>
+        <cell>$&lt;salt&gt;</cell>
+        <cell>$&lt;hashed&gt;</cell>
+      </row>
+    </table>
+    <table char_offset="27" justification="left" col_min="200" col_max="200" col_widths="0,0">
+      <row>
+        <cell>$2a$</cell>
+        <cell>Blowfish</cell>
+      </row>
+      <row>
+        <cell>$5$</cell>
+        <cell>Sha-256</cell>
+      </row>
+      <row>
+        <cell>$6$</cell>
+        <cell>Sha-512</cell>
+      </row>
+      <row>
+        <cell>$sha1$</cell>
+        <cell>Sha1crypt</cell>
+      </row>
+      <row>
+        <cell>$y$</cell>
+        <cell>Yescrypt</cell>
+      </row>
+      <row>
+        <cell>$gy$</cell>
+        <cell>Gost-yescrypt</cell>
+      </row>
+      <row>
+        <cell>$7$</cell>
+        <cell>Scrypt</cell>
+      </row>
+      <row>
+        <cell>ID</cell>
+        <cell>HashMethod</cell>
+      </row>
+    </table>
+  </node>
+</cherrytree>

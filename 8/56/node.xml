@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="56" master_id="0" name="post exploitation" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747996342" ts_lastsave="1747998867">
+    <rich_text>- use eternalblue
+
+- hashdump
+
+- then use psexec
+	set user
+	set pw-hash von user vorher
+	run
+	
+
+Token basierte auth:
+
+   → getprivs
+
+Es geht nicht nur um filsystem und gruppen sodnern auch um die Privalages die ich reduzieren muss -&gt; weil wenn ich zB debug privs habe kann ich auf dedn speicherbereich von anderen Prozessen zugreifen.
+  
+  Dann kann man quasi warten bis sich ein admin anmeldet -&gt;
+  
+  dann kann ich den token wählen und hab überall seine rechte:
+  
+und jetzt bin ich quasi domain admin  wegen seindes tokens
+  
+  
+jetzt kann ich mich aufgrund seines tokens überall hinverbinden auch DC. 
+  
+  </rich_text>
+    <encoded_png char_offset="337" justification="left" link="" sha256sum="f8c5f103b64a6cb0407338c8f039616a319b936da7341071f72d5145bc93ecb1"/>
+    <encoded_png char_offset="467" justification="left" link="" sha256sum="ecbf894a22852894b9b8bc754d0aa759310aa719a5419cbc553232a5dd227120"/>
+    <encoded_png char_offset="530" justification="left" link="" sha256sum="f0bccc0757289786a884e4a8718ad55292ad4cfb92a5394780651bcd312ee6ae"/>
+    <encoded_png char_offset="608" justification="left" link="" sha256sum="fd631c203f69e0dee39e1fb6049354d9998aeb52f2b4a1f4efcc04e067af7d15"/>
+  </node>
+</cherrytree>
