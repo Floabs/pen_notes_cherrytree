@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="59" master_id="0" name="VO" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1748002592" ts_lastsave="1748004695">
+  <node unique_id="59" master_id="0" name="VO" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1748002592" ts_lastsave="1748005505">
     <rich_text>1. Vorlesung.
 Begrifflichlichkeiten:
 9 - 12
@@ -54,24 +54,25 @@ Kurz headset nicht gegangen?!
 3. Network exploit.
 
 
-5-8
-21-26
+6-9
+22-27
 
-49-51
+50-52
 
-91
-102-105
-112-119
+92
+103-106
+113-120
 
 NTLM REALYING IST UNABHÄNGIG VOM PROTOKOLL!! nur mit SMB erklärt 100% prüfungsfrage
 
-129-130
+130-140
 
-142-144
+143-145
 
-166-168
+167-169
 
-4. Post- UE
+4. Post- UE (auch +1)
+TODO +1
 
 17
 31-33
@@ -90,7 +91,7 @@ NTLM REALYING IST UNABHÄNGIG VOM PROTOKOLL!! nur mit SMB erklärt 100% prüfung
 87-88 (ohne tools)
 91-100
 
-
+Für CTF - Übung 1 &amp; 2 im post.
 
 
  
