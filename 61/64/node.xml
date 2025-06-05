@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="64" master_id="0" name="NFS" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1748525607" ts_lastsave="1748525620">
+    <rich_text>NFS&#13;
+Command																								Description&#13;
+showmount -e &lt;FQDN/IP&gt;																	Show available NFS shares.&#13;
+mount -t nfs &lt;FQDN/IP&gt;:/&lt;share&gt; ./target-NFS/ -o nolock					Mount the specific NFS share.umount ./target-NFS&#13;
+umount ./target-NFS																				Unmount the specific NFS share.&#13;
+
+DNS&#13;
+Command																										Description&#13;
+dig ns &lt;domain.tld&gt; @&lt;nameserver&gt;															NS request to the specific nameserver.&#13;
+dig any &lt;domain.tld&gt; @&lt;nameserver&gt;														ANY request to the specific nameserver.&#13;
+dig axfr &lt;domain.tld&gt; @&lt;nameserver&gt;														AXFR request to the specific nameserver.&#13;
+dnsenum --dnsserver &lt;nameserver&gt; --enum -p 0 -s 0 -o found_subdomains.txt -f ~/subdomains.list &lt;domain.tld&gt;	Subdomain brute forcing.&#13;</rich_text>
+  </node>
+</cherrytree>

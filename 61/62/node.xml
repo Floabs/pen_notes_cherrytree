@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="62" master_id="0" name="FTP" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1748525519" ts_lastsave="1748525529">
+    <rich_text>Command	Description&#13;
+ftp &lt;FQDN/IP&gt;																			Interact with the FTP service on the target.&#13;
+nc -nv &lt;FQDN/IP&gt;									 								21	Interact with the FTP service on the target.&#13;
+telnet &lt;FQDN/IP&gt; 21																Interact with the FTP service on the target.&#13;
+openssl s_client -connect &lt;FQDN/IP&gt;:21 -starttls ftp				Interact with the FTP service on the target using encrypted connection.&#13;
+wget -m --no-passive </rich_text>
+    <rich_text link="webs ftp://anonymous:anonymous@">ftp://anonymous:anonymous@</rich_text>
+    <rich_text>&lt;target&gt;	Download all available files on the target FTP server.
+
+</rich_text>
+  </node>
+</cherrytree>

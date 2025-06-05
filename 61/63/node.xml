@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="63" master_id="0" name="SMB" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1748525576" ts_lastsave="1748525577">
+    <rich_text>SMB&#13;
+Command																			Description&#13;
+smbclient -N -L //&lt;FQDN/IP&gt;											Null session authentication on SMB.&#13;
+smbclient //&lt;FQDN/IP&gt;/&lt;share&gt;										Connect to a specific SMB share.&#13;
+rpcclient -U "" &lt;FQDN/IP&gt;												Interaction with the target using RPC.&#13;
+samrdump.py &lt;FQDN/IP&gt;													Username enumeration using Impacket scripts.&#13;
+smbmap -H &lt;FQDN/IP&gt;													Enumerating SMB shares.&#13;
+crackmapexec smb &lt;FQDN/IP&gt; --shares -u '' -p ''				Enumerating SMB shares using null session authentication.&#13;
+enum4linux-ng.py &lt;FQDN/IP&gt; -A										SMB enumeration using enum4linux.&#13;
+</rich_text>
+  </node>
+</cherrytree>
