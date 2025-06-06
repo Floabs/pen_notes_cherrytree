@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="74" master_id="0" name="mimikatz" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749201959" ts_lastsave="1749202256">
+    <rich_text>
+
+</rich_text>
+    <rich_text link="webs https://github.com/gentilkiwi/mimikatz">https://github.com/gentilkiwi/mimikatz</rich_text>
+    <rich_text>
+
+
+Mimikatz au den Server hochladen:
+				
+
+Als nächster hole ich mir debug rechte
+Dann sperre ich per dll den rechner sodass sich der user neu einloggen muss:
+
+
+
+Wenn er sich danach einloggt wieder:
+
+Auslesen der logs:
+	C:\windows\system32\mimilsa.log
+	mit type c:\\windows\\system32\\mimilsa.log&#13;	&#13;</rich_text>
+    <encoded_png char_offset="0" justification="left" link="" sha256sum="830bedab800a0b9539ef99e83ca9f35b29195f8a667920dacc6dd7130cb5feb8"/>
+    <encoded_png char_offset="82" justification="left" link="" sha256sum="664d9335d75c179f9d69865c25a70a6eb5f47d1fbaf4af746d8450f8a3475c04"/>
+    <encoded_png char_offset="202" justification="left" link="" sha256sum="db4dc65a13e5123514e6d3b1c82d35ecdc8741da48b9f8e9523c43b2362a8890"/>
+    <encoded_png char_offset="341" justification="left" link="" sha256sum="63996fc5bc2f180e6e111abcb0d75f09d28331f7cd593d264cb1e72493696660"/>
+  </node>
+</cherrytree>

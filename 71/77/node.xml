@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="77" master_id="0" name="token impersonation" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749202719" ts_lastsave="1749203024">
+    <rich_text>Zuerst zB mit eternalblue etc exploiten,
+
+hashdump benutzen um dann mit dem admin hash connecten:
+
+
+
+danach tokens listen:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+Kann mich jetzt überall hinverbdinden:
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <encoded_png char_offset="99" justification="left" link="" sha256sum="257ba59cd27fe5465b82e31a6ef5cf5415daec86dfe3799aa06b4a0fa595aca3"/>
+    <encoded_png char_offset="124" justification="left" link="" sha256sum="ecbf894a22852894b9b8bc754d0aa759310aa719a5419cbc553232a5dd227120"/>
+    <encoded_png char_offset="165" justification="left" link="" sha256sum="d553373179f2df422ab7ca5e89d6a41de71912d5ad255af275b92d5ae92a495a"/>
+  </node>
+</cherrytree>

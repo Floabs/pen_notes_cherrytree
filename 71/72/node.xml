@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="72" master_id="0" name="UAC bypass" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749164749" ts_lastsave="1749164832">
+  <node unique_id="72" master_id="0" name="UAC bypass" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749164749" ts_lastsave="1749201838">
     <rich_text>ask for admin rights with: 
 	 meterpreter:
  		exploit/windows/local/ask&#13;&#13;&#13;hashdump&#13;&#13;
@@ -8,6 +8,11 @@
  
  anders geht auch mit:
  &#13;&#13;exploit/windows/local/bypassuac
- ODER mit reflective DLL:&#13;&#13;exploit/windows/local/bypassuac_inject&#13;&#13;&#13;&#13;</rich_text>
+ ODER mit reflective DLL:&#13;&#13;exploit/windows/local/bypassuac_inject&#13;
+ 
+ 
+ &#13;</rich_text>
+    <encoded_png char_offset="219" justification="left" link="" sha256sum="68f8ed1e43e971f85c4c13cf375b556f72417465a3b37096b3af09f92f222f57"/>
+    <encoded_png char_offset="225" justification="left" link="" sha256sum="6c5dd9eadac1df8f16bef2ea2a47fae1f1f1d4f1806a6e68c54b624fe2689ea0"/>
   </node>
 </cherrytree>

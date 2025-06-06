@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="75" master_id="0" name="RDP - Pass thee hash" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1749202405" ts_lastsave="1749202428">
+    <rich_text></rich_text>
+    <codebox char_offset="0" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">apt-get update&#13;
+apt-get install freerdp-x11&#13;
+xfreerdp /u:Administrator /pth:658a563f74fd395b702fbaa8121d4128 /v:10.10.40.3</codebox>
+  </node>
+</cherrytree>
